@@ -1,0 +1,43 @@
+# Galaxy Explorer — ambiente de desenvolvimento.
+#
+# Porta do host padrao 5433 (nao 5432): nesta maquina a 5432 ja e usada por um
+# PostgreSQL instalado como servico do Windows. Publicada so em loopback para o
+# banco de desenvolvimento nao ficar exposto na rede local.
+# Para mudar, defina POSTGRES_PORT no .env (e GALAXY_DB_PORT para o backend).
+
+services:
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: galaxy
+      POSTGRES_USER: galaxy
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-galaxy_dev}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      # Caminho correto para a imagem 17 (a 18 mudou o caminho de dados —
+      # nao trocar de major sem rever isto).
+      - galaxy-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U galaxy -d galaxy"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+
+  # Bloco futuro: backend containerizado.
+  # backend:
+  #   build: ./backend
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+  #   environment:
+  #     GALAXY_DB_HOST: postgres
+  #     GALAXY_DB_PORT: 5432
+
+  # Bloco futuro: frontend (React + Vite).
+  # frontend:
+  #   build: ./frontend
+
+volumes:
+  galaxy-pgdata:

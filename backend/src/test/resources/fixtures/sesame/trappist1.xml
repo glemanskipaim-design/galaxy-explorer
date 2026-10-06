@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Sesame xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="https://vizier.cds.unistra.fr/xml/sesame_4x.xsd">
+<Target option="S">
+  <name>TRAPPIST-1</name>
+  <!-- Q9415240 #1 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 0ms [0] -->
+    <INFO>from cache</INFO>
+    <oid>1353525</oid>
+    <otype>LM*</otype>
+    <jpos>23:06:29.36 -05:02:29.0</jpos>
+    <jradeg>346.62236873</jradeg>
+    <jdedeg>-5.04139925</jdedeg>
+    <refPos>2020yCat.1350....0G</refPos>
+    <errRAmas>0.0616</errRAmas><errDEmas>0.0536</errDEmas>
+    <pm>
+      <v>1046.826</v><e>0.112</e><q>A</q><r>2020yCat.1350....0G</r>
+      <pa>117.23</pa>
+      <pmRA>930.788</pmRA><epmRA>0.087</epmRA>
+      <pmDE>-479.038</pmDE><epmDE>0.070</epmDE>
+    </pm>
+    <Vel><v>-52.003101</v><e>0.134416</e><q>A</q><r>2020AJ....160..120J</r></Vel>
+    <plx><v>80.2123</v><e>0.0716</e><q>A</q><r>2020yCat.1350....0G</r></plx>
+    <spType>M7.5e</spType><spNum>0.0002A300.0000.0000000001000000</spNum>
+    <oname>TRAPPIST-1</oname>
+    <nrefs>1367</nrefs>
+  </Resolver>
+</Target>
+</Sesame>
+<!--- ====Done (2026-Oct-06,15:53:45z)==== -->

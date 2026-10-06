@@ -1,0 +1,1 @@
+SELECT table_name, column_name, unit, datatype FROM TAP_SCHEMA.columns WHERE table_name IN ('basic', 'ident', 'flux', 'mesDistance') ORDER BY table_name, column_name

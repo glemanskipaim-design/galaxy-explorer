@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Sesame xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="https://vizier.cds.unistra.fr/xml/sesame_4x.xsd">
+<Target option="S">
+  <name>M51</name>
+  <!-- Q9414080 #1 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 0ms [0] -->
+    <INFO>from cache</INFO>
+    <oid>587337</oid>
+    <otype>Sy2</otype>
+    <jpos>13:29:52.69 +47:11:42.9</jpos>
+    <jradeg>202.469575</jradeg>
+    <jdedeg>47.19525833</jdedeg>
+    <refPos>2006AJ....131.1163S</refPos>
+    <Vel><v>523.00</v><e>2.00</e><q>C</q><r>2022ApJS..261....6K</r></Vel>
+    <MType>SA</MType>
+    <oname>M  51</oname>
+    <nrefs>4618</nrefs>
+  </Resolver>
+</Target>
+<Target option="S">
+  <name>M81</name>
+  <!-- Q9414080 #2 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 120ms [5] -->
+    <oid>434630</oid>
+    <otype>Sy2</otype>
+    <jpos>09:55:33.17 +69:03:55.0</jpos>
+    <jradeg>148.8882194</jradeg>
+    <jdedeg>69.06529514</jdedeg>
+    <refPos>2020yCat.1350....0G</refPos>
+    <errRAmas>0.0459</errRAmas><errDEmas>0.0494</errDEmas>
+    <pm>
+      <v>0.287</v><e>0.086</e><q>A</q><r>2020yCat.1350....0G</r>
+      <pa>105</pa>
+      <pmRA>0.278</pmRA><epmRA>0.059</epmRA>
+      <pmDE>-0.072</pmDE><epmDE>0.063</epmDE>
+    </pm>
+    <Vel><v>-47.0</v><e>21.0</e><q>C</q><r>2022ApJS..261....6K</r></Vel>
+    <plx><v>0.1495</v><e>0.06</e><q>A</q><r>2020yCat.1350....0G</r></plx>
+    <MType>SA</MType>
+    <oname>M  81</oname>
+    <nrefs>4768</nrefs>
+  </Resolver>
+</Target>
+<Target option="S">
+  <name>M94</name>
+  <!-- Q9414080 #3 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 0ms [0] -->
+    <INFO>from cache</INFO>
+    <oid>1976412</oid>
+    <otype>SyG</otype>
+    <jpos>12:50:53.07 +41:07:12.9</jpos>
+    <jradeg>192.72114082</jradeg>
+    <jdedeg>41.12025025</jdedeg>
+    <refPos>2020yCat.1350....0G</refPos>
+    <errRAmas>0.3921</errRAmas><errDEmas>0.3050</errDEmas>
+    <pm>
+      <v>1.072</v><e>0.602</e><q>A</q><r>2020yCat.1350....0G</r>
+      <pa>42</pa>
+      <pmRA>0.714</pmRA><epmRA>0.398</epmRA>
+      <pmDE>0.800</pmDE><epmDE>0.451</epmDE>
+    </pm>
+    <Vel><v>287.0</v><e>24.0</e><q>D</q><r>1999PASP..111..438F</r></Vel>
+    <MType>S_AB</MType>
+    <oname>M  94</oname>
+    <nrefs>1490</nrefs>
+  </Resolver>
+</Target>
+</Sesame>
+<!--- ****Total of 1 crashes -->
+<!-- Configuration tested: /run/sesame.conf -->

@@ -1,0 +1,5 @@
+# Profile "seed": roda a carga inicial, imprime o relatorio e sai.
+# Nao sobe servidor HTTP.
+spring:
+  main:
+    web-application-type: none

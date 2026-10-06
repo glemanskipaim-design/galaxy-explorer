@@ -1,0 +1,1 @@
+SELECT oidref, dist, unit, minus_err, plus_err, method, bibcode FROM mesDistance WHERE oidref IN (434630, 587337, 1976412) ORDER BY oidref, bibcode, method

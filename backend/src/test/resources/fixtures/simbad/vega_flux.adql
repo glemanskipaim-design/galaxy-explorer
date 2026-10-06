@@ -1,0 +1,1 @@
+SELECT oidref, filter, flux, flux_err, bibcode FROM flux WHERE oidref IN (2900336) ORDER BY oidref, filter

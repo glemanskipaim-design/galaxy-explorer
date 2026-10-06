@@ -1,0 +1,6 @@
+{
+  "test_cmd": "cd backend && .\\mvnw.cmd -q -B test",
+  "lint_cmd": null,
+  "require_hattori": true,
+  "require_yagyu_always": false
+}

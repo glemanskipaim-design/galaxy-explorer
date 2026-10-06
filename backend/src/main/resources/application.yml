@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: galaxy-explorer
+  datasource:
+    # Porta 5433 por padrao: a 5432 desta maquina e de um PostgreSQL de servico
+    # do Windows. Mantenha igual a POSTGRES_PORT do docker-compose.
+    url: jdbc:postgresql://${GALAXY_DB_HOST:localhost}:${GALAXY_DB_PORT:5433}/galaxy
+    username: galaxy
+    # Default so de desenvolvimento, coerente com o docker-compose.yml.
+    password: ${GALAXY_DB_PASSWORD:galaxy_dev}
+  flyway:
+    locations: classpath:db/migration
+
+server:
+  # So loopback por padrao: a API nao tem autenticacao no Bloco 1 e POST /api/v1/imports
+  # dispara chamadas externas. Containerizado, defina GALAXY_BIND_ADDRESS=0.0.0.0 SO dentro
+  # do container e publique a porta como 127.0.0.1:8080:8080 (igual ao Postgres).
+  address: ${GALAXY_BIND_ADDRESS:127.0.0.1}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+galaxy:
+  simbad:
+    tap-url: https://simbad.cds.unistra.fr/simbad/sim-tap/sync
+    sesame-url: https://cds.unistra.fr/cgi-bin/nph-sesame/-oxp/S
+    # Limite do CDS: 6 req/s por IP. 2 req/s e o teto somando Sesame + TAP
+    # (um limitador so, compartilhado pelos dois clientes).
+    requests-per-second: 2
+    connect-timeout: 10s
+    read-timeout: 60s
+    max-rec: 100000
+    retry-max-attempts: 3
+    retry-initial-backoff: 1s
+    user-agent: "GalaxyExplorer/0.1 (personal research project)"
+  ingestion:
+    batch-size: 10
+  imports:
+    queue-capacity: 20
+    # jobs terminais e payloads crus de imports sem resultado sao apagados apos este prazo
+    retention: 30d

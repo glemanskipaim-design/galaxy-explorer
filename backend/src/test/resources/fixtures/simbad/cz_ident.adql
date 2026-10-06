@@ -1,0 +1,1 @@
+SELECT oidref, id FROM ident WHERE oidref IN (434630, 587337, 1976412) ORDER BY oidref, id

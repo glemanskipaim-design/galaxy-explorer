@@ -1,0 +1,1 @@
+SELECT oid, main_id, otype, ra, dec, coo_bibcode, plx_value, plx_err, plx_bibcode, rvz_redshift, rvz_radvel, rvz_type, rvz_err, rvz_bibcode, sp_type, sp_bibcode, morph_type, morph_bibcode, galdim_majaxis, galdim_minaxis, galdim_bibcode FROM basic WHERE oid IN (2900336)

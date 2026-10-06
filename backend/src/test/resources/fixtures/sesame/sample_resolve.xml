@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Sesame xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="https://vizier.cds.unistra.fr/xml/sesame_4x.xsd">
+<Target option="S">
+  <name>M31</name>
+  <!-- Q9327461 #1 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 0ms [0] -->
+    <INFO>from cache</INFO>
+    <oid>1575544</oid>
+    <otype>AGN</otype>
+    <jpos>00:42:44.32 +41:16:07.5</jpos>
+    <jradeg>10.68470833</jradeg>
+    <jdedeg>41.26875</jdedeg>
+    <refPos>2006AJ....131.1163S</refPos>
+    <Vel><v>-300.0</v><e>4.0</e><q>C</q><r>2012AJ....144....4M</r></Vel>
+    <MType>SA(s)b</MType>
+    <oname>M  31</oname>
+    <nrefs>13829</nrefs>
+  </Resolver>
+</Target>
+<Target option="S">
+  <name>M1</name>
+  <!-- Q9327461 #2 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 0ms [0] -->
+    <INFO>from cache</INFO>
+    <oid>795871</oid>
+    <otype>SNR</otype>
+    <jpos>05:34:31.77 +22:01:02.6</jpos>
+    <jradeg>83.6324</jradeg>
+    <jdedeg>22.0174</jdedeg>
+    <refPos>2022A&amp;A...661A..38P</refPos>
+    <errRAmas>5000</errRAmas><errDEmas>5000</errDEmas>
+    <oname>M   1</oname>
+    <nrefs>6597</nrefs>
+  </Resolver>
+</Target>
+<Target option="S">
+  <name>M42</name>
+  <!-- Q9327461 #3 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 0ms [0] -->
+    <INFO>from cache</INFO>
+    <oid>810146</oid>
+    <otype>HII</otype>
+    <jpos>05:35:16.82 -05:23:15.3</jpos>
+    <jradeg>83.8201</jradeg>
+    <jdedeg>-5.3876</jdedeg>
+    <refPos>2022A&amp;A...661A..38P</refPos>
+    <errRAmas>5000</errRAmas><errDEmas>5000</errDEmas>
+    <pm>
+      <v>1.70</v><e>0.69</e><q>D</q><r>2009MNRAS.399.2146W</r>
+      <pa>100</pa>
+      <pmRA>1.67</pmRA><epmRA>0.49</epmRA>
+      <pmDE>-0.30</pmDE><epmDE>0.49</epmDE>
+    </pm>
+    <Vel><v>27.8</v><e>5</e><q>C</q><r>2017A&amp;A...600A.106C</r></Vel>
+    <oname>M  42</oname>
+    <nrefs>4506</nrefs>
+  </Resolver>
+</Target>
+<Target option="S">
+  <name>M45</name>
+  <!-- Q9327461 #4 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 0ms [0] -->
+    <INFO>from cache</INFO>
+    <oid>675533</oid>
+    <otype>OpC</otype>
+    <jpos>03:46:24.19 +24:06:50.0</jpos>
+    <jradeg>56.60083333</jradeg>
+    <jdedeg>24.11388889</jdedeg>
+    <refPos>2021A&amp;A...647A..19T</refPos>
+    <pm>
+      <v>49.744</v><e>0.162</e><q>B</q><r>2018A&amp;A...616A..10G</r>
+      <pa>156.3</pa>
+      <pmRA>19.997</pmRA><epmRA>0.127</epmRA>
+      <pmDE>-45.548</pmDE><epmDE>0.101</epmDE>
+    </pm>
+    <Vel><v>5.88</v><e>0.03</e><q>A</q><r>2021A&amp;A...647A..19T</r></Vel>
+    <plx><v>7.364</v><e>0.005</e><q>B</q><r>2018A&amp;A...616A..10G</r></plx>
+    <oname>Cl Melotte   22</oname>
+    <nrefs>3731</nrefs>
+  </Resolver>
+</Target>
+<Target option="S">
+  <name>M87</name>
+  <!-- Q9327461 #5 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 0ms [0] -->
+    <INFO>from cache</INFO>
+    <oid>1937204</oid>
+    <otype>AGN</otype>
+    <jpos>12:30:49.42 +12:23:28.0</jpos>
+    <jradeg>187.70593077</jradeg>
+    <jdedeg>12.39112325</jdedeg>
+    <refPos>2020A&amp;A...644A.159C</refPos>
+    <errRAmas>0.030800</errRAmas><errDEmas>0.0305</errDEmas>
+    <pm>
+      <v>13.405</v><e>1.502</e><q>A</q><r>2018yCat.1345....0G</r>
+      <pa>323</pa>
+      <pmRA>-8.029</pmRA><epmRA>1.178</epmRA>
+      <pmDE>10.734</pmDE><epmDE>0.932</epmDE>
+    </pm>
+    <z><v>0.00420</v><e>0.00012</e><q>E</q><r>2009ApJS..182..543A</r></z>
+    <MType>E-E/S0</MType>
+    <oname>M  87</oname>
+    <nrefs>7980</nrefs>
+  </Resolver>
+</Target>
+<Target option="S">
+  <name>M13</name>
+  <!-- Q9327461 #6 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 0ms [0] -->
+    <INFO>from cache</INFO>
+    <oid>2894585</oid>
+    <otype>GlC</otype>
+    <jpos>16:41:41.63 +36:27:40.7</jpos>
+    <jradeg>250.423475</jradeg>
+    <jdedeg>36.46131944</jdedeg>
+    <refPos>2006AJ....131.1163S</refPos>
+    <pm>
+      <v>4.08</v><e>0.01</e><q>C</q><r>2019MNRAS.482.5138B</r>
+      <pa>231.2</pa>
+      <pmRA>-3.18</pmRA><epmRA>0.01</epmRA>
+      <pmDE>-2.56</pmDE><epmDE>0.01</epmDE>
+    </pm>
+    <Vel><v>-244.4</v><e>0.3</e><q>A</q><r>2018MNRAS.478.1520B</r></Vel>
+    <plx><v>0.127</v><e>0.010</e><q>C</q><r>2021MNRAS.505.5978V</r></plx>
+    <oname>M  13</oname>
+    <nrefs>2316</nrefs>
+  </Resolver>
+</Target>
+<Target option="S">
+  <name>M57</name>
+  <!-- Q9327461 #7 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 0ms [0] -->
+    <INFO>from cache</INFO>
+    <oid>2868878</oid>
+    <otype>PN</otype>
+    <jpos>18:53:35.09 +33:01:44.8</jpos>
+    <jradeg>283.39623652</jradeg>
+    <jdedeg>33.02913425</jdedeg>
+    <refPos>2020yCat.1350....0G</refPos>
+    <errRAmas>0.0333</errRAmas><errDEmas>0.0383</errDEmas>
+    <pm>
+      <v>2.969</v><e>0.062</e><q>A</q><r>2020yCat.1350....0G</r>
+      <pa>34</pa>
+      <pmRA>1.645</pmRA><epmRA>0.043</epmRA>
+      <pmDE>2.472</pmDE><epmDE>0.045</epmDE>
+    </pm>
+    <Vel><v>-19.1</v><e>2</e><q>E</q><r>1953GCRV..C......0W</r></Vel>
+    <plx><v>1.2696</v><e>0.0438</e><q>A</q><r>2020yCat.1350....0G</r></plx>
+    <spType>DA(O?)</spType><spNum>0.10400060.0000.0000000000000000</spNum>
+    <oname>M  57</oname>
+    <nrefs>873</nrefs>
+  </Resolver>
+</Target>
+<Target option="S">
+  <name>M82</name>
+  <!-- Q9327461 #8 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 0ms [0] -->
+    <INFO>from cache</INFO>
+    <oid>433918</oid>
+    <otype>AGN</otype>
+    <jpos>09:55:52.42 +69:40:46.9</jpos>
+    <jradeg>148.96845833</jradeg>
+    <jdedeg>69.67970278</jdedeg>
+    <refPos>2006AJ....131.1163S</refPos>
+    <z><v>0.00073</v><e>0.00009</e><q>E</q><r>2009ApJS..182..543A</r></z>
+    <MType>S</MType>
+    <oname>M  82</oname>
+    <nrefs>6219</nrefs>
+  </Resolver>
+</Target>
+<Target option="S">
+  <name>Betelgeuse</name>
+  <!-- Q9327461 #9 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 0ms [0] -->
+    <INFO>from cache</INFO>
+    <oid>843879</oid>
+    <otype>s*r</otype>
+    <jpos>05:55:10.30 +07:24:25.4</jpos>
+    <jradeg>88.79293899</jradeg>
+    <jdedeg>7.407064</jdedeg>
+    <refPos>2007A&amp;A...474..653V</refPos>
+    <errRAmas>9.04</errRAmas><errDEmas>5.72</errDEmas>
+    <pm>
+      <v>29.77</v><e>1.22</e><q>A</q><r>2007A&amp;A...474..653V</r>
+      <pa>68</pa>
+      <pmRA>27.54</pmRA><epmRA>0.65</epmRA>
+      <pmDE>11.30</pmDE><epmDE>1.03</epmDE>
+    </pm>
+    <Vel><v>21.91</v><e>0.51</e><q>A</q><r>2005A&amp;A...430..165F</r></Vel>
+    <plx><v>6.55</v><e>0.83</e><q>A</q><r>2007A&amp;A...474..653V</r></plx>
+    <spType>M1-M2Ia-Iab</spType><spNum>0.01026700.0110.0000000000000000</spNum>
+    <oname>* alf Ori</oname>
+    <nrefs>1803</nrefs>
+  </Resolver>
+</Target>
+<Target option="S">
+  <name>Sgr A*</name>
+  <!-- Q9327461 #10 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 0ms [0] -->
+    <INFO>from cache</INFO>
+    <oid>2419046</oid>
+    <otype>X</otype>
+    <jpos>17:45:40.03 -29:00:28.1</jpos>
+    <jradeg>266.41681662</jradeg>
+    <jdedeg>-29.00782497</jdedeg>
+    <refPos>2011AJ....142...35P</refPos>
+    <errRAmas>1.42</errRAmas><errDEmas>2.65</errDEmas>
+    <oname>NAME Sgr A*</oname>
+    <nrefs>5156</nrefs>
+  </Resolver>
+</Target>
+<Target option="S">
+  <name>M54</name>
+  <!-- Q9327461 #11 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 54ms [5] -->
+    <oid>2395133</oid>
+    <otype>GlC</otype>
+    <jpos>18:55:03.33 -30:28:47.4</jpos>
+    <jradeg>283.763875</jradeg>
+    <jdedeg>-30.47986111</jdedeg>
+    <refPos>2010AJ....140.1830G</refPos>
+    <pm>
+      <v>3.06</v><e>0.03</e><q>C</q><r>2019MNRAS.482.5138B</r>
+      <pa>243.2</pa>
+      <pmRA>-2.73</pmRA><epmRA>0.02</epmRA>
+      <pmDE>-1.38</pmDE><epmDE>0.02</epmDE>
+    </pm>
+    <Vel><v>142.3</v><e>0.3</e><q>A</q><r>2018MNRAS.478.1520B</r></Vel>
+    <plx><v>0.053</v><e>0.011</e><q>C</q><r>2021MNRAS.505.5978V</r></plx>
+    <oname>M  54</oname>
+    <nrefs>1182</nrefs>
+  </Resolver>
+</Target>
+<Target option="S">
+  <name>XyzzyNotAnObject123</name>
+  <!-- Q9327461 #12 -->
+  <INFO> *** NNNothing found *** </INFO>
+</Target>
+</Sesame>
+<!--- ****Total of 1 crashes -->
+<!-- Configuration tested: /run/sesame.conf -->
