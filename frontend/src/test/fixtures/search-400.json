@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/search?q=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "body": null
+  },
+  "status": 400,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T15:42:40.899Z",
+  "body": {
+    "error": {
+      "code": "VALIDATION_FAILED",
+      "message": "parâmetros inválidos",
+      "details": [
+        {
+          "message": "deve ter de 1 a 100 caracteres",
+          "field": "q"
+        }
+      ]
+    }
+  }
+}

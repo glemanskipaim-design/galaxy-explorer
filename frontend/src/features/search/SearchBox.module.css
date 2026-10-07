@@ -1,0 +1,107 @@
+.form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border: 1px solid var(--color-border-strong);
+  background: rgba(11, 16, 32, 0.7);
+  border-radius: var(--radius-pill);
+  transition:
+    border-color var(--duration-fast) ease,
+    box-shadow var(--duration-slow) var(--ease-out);
+}
+
+.form:focus-within {
+  border-color: rgba(103, 232, 249, 0.6);
+  box-shadow: var(--glow-accent);
+}
+
+.icon {
+  flex: none;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-text);
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.85;
+}
+
+.input::-webkit-search-cancel-button {
+  filter: invert(0.7);
+  cursor: pointer;
+}
+
+/* foco ja e sinalizado pelo :focus-within do formulario (anel + brilho) */
+.input:focus-visible {
+  box-shadow: none;
+}
+
+.hero {
+  padding: 0 var(--space-5);
+  min-height: 4rem;
+  background: linear-gradient(180deg, rgba(17, 24, 48, 0.85), rgba(8, 12, 26, 0.85));
+  box-shadow: 0 30px 60px -30px rgba(34, 211, 238, 0.35);
+}
+
+.hero .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: var(--space-3);
+}
+
+.hero .input {
+  font-size: var(--text-lg);
+  padding: var(--space-4) 0;
+}
+
+.compact {
+  padding: 0 var(--space-1) 0 var(--space-3);
+  min-height: 2.5rem;
+}
+
+.compact .icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-right: var(--space-2);
+}
+
+.compact .input {
+  font-size: var(--text-sm);
+  padding: var(--space-2) 0;
+}
+
+.submit {
+  flex: none;
+  border: 0;
+  border-radius: var(--radius-pill);
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.submit:hover {
+  background: rgba(103, 232, 249, 0.2);
+}
+
+@media (min-width: 40rem) {
+  .hero {
+    min-height: 4.5rem;
+    padding: 0 var(--space-6);
+  }
+
+  .hero .input {
+    font-size: var(--text-xl);
+  }
+}

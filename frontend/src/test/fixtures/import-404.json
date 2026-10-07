@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/imports/999999999",
+    "body": null
+  },
+  "status": 404,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T15:42:41.053Z",
+  "body": {
+    "error": {
+      "code": "IMPORT_NOT_FOUND",
+      "message": "importação não encontrada",
+      "details": null
+    }
+  }
+}

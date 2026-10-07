@@ -91,6 +91,37 @@ public class CelestialObjectRepository {
                 .list();
     }
 
+    /**
+     * Objetos cuja categoria esta em {@code categoryIds} (ids ja resolvidos — este repositorio nao
+     * conhece a hierarquia), em ordem natural de nome (collation {@code natural_sort}, V7).
+     */
+    public List<ObjectRow> findByCategoryIds(Collection<Integer> categoryIds, int limit, int offset) {
+        if (categoryIds.isEmpty()) {
+            return List.of();
+        }
+        return jdbc.sql("""
+                SELECT * FROM celestial_object
+                WHERE category_id IN (:ids)
+                ORDER BY display_name COLLATE natural_sort, slug
+                LIMIT :limit OFFSET :offset
+                """)
+                .param("ids", categoryIds)
+                .param("limit", limit)
+                .param("offset", offset)
+                .query((rs, n) -> map(rs))
+                .list();
+    }
+
+    public long countByCategoryIds(Collection<Integer> categoryIds) {
+        if (categoryIds.isEmpty()) {
+            return 0;
+        }
+        return jdbc.sql("SELECT count(*) FROM celestial_object WHERE category_id IN (:ids)")
+                .param("ids", categoryIds)
+                .query(Long.class)
+                .single();
+    }
+
     private static ObjectRow map(ResultSet rs) throws SQLException {
         return new ObjectRow(rs.getObject("id", UUID.class), rs.getString("slug"), rs.getString("display_name"),
                 (Integer) rs.getObject("category_id"), rs.getString("category_basis"),

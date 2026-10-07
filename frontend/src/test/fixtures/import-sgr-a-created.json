@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/imports",
+    "body": {
+      "query": "Sgr A*"
+    }
+  },
+  "status": 202,
+  "headers": {
+    "content-type": "application/json",
+    "location": "/api/v1/imports/6",
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T00:17:49.708Z",
+  "body": {
+    "id": 6,
+    "query": "Sgr A*",
+    "status": "queued",
+    "message": null,
+    "resultSlugs": [],
+    "runId": null,
+    "createdAt": "2026-10-07T00:17:49.701740Z",
+    "startedAt": null,
+    "finishedAt": null
+  }
+}

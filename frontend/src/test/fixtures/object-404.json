@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/objects/nao-existe",
+    "body": null
+  },
+  "status": 404,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T15:42:40.917Z",
+  "body": {
+    "error": {
+      "code": "OBJECT_NOT_FOUND",
+      "message": "objeto não encontrado no catálogo local",
+      "details": null
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/imports/4",
+    "body": null
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T00:17:48.881Z",
+  "body": {
+    "id": 4,
+    "query": "Vega",
+    "status": "succeeded",
+    "message": "já existia no catálogo",
+    "resultSlugs": [
+      "vega"
+    ],
+    "runId": null,
+    "createdAt": "2026-10-07T00:17:48.849086Z",
+    "startedAt": "2026-10-07T00:17:48.856126Z",
+    "finishedAt": "2026-10-07T00:17:48.868858Z"
+  }
+}

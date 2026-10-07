@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/imports/6",
+    "body": null
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T00:17:52.760Z",
+  "body": {
+    "id": 6,
+    "query": "Sgr A*",
+    "status": "succeeded",
+    "message": null,
+    "resultSlugs": [
+      "sgr-a"
+    ],
+    "runId": 9,
+    "createdAt": "2026-10-07T00:17:49.701740Z",
+    "startedAt": "2026-10-07T00:17:49.708093Z",
+    "finishedAt": "2026-10-07T00:17:52.541559Z"
+  }
+}

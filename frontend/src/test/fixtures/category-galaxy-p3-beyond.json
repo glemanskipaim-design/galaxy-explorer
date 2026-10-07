@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/categories/galaxy/objects?limit=24&offset=48",
+    "body": null
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T15:42:41.028Z",
+  "body": {
+    "category": {
+      "code": "galaxy",
+      "namePt": "Galáxia",
+      "nameEn": "Galaxy"
+    },
+    "total": 39,
+    "limit": 24,
+    "offset": 48,
+    "items": []
+  }
+}

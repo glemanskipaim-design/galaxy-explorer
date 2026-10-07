@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/imports",
+    "body": {
+      "query": "Vega"
+    }
+  },
+  "status": 202,
+  "headers": {
+    "content-type": "application/json",
+    "location": "/api/v1/imports/4",
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T00:17:48.857Z",
+  "body": {
+    "id": 4,
+    "query": "Vega",
+    "status": "queued",
+    "message": null,
+    "resultSlugs": [],
+    "runId": null,
+    "createdAt": "2026-10-07T00:17:48.849086Z",
+    "startedAt": null,
+    "finishedAt": null
+  }
+}

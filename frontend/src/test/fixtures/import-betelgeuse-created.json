@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/imports",
+    "body": {
+      "query": "Betelgeuse"
+    }
+  },
+  "status": 202,
+  "headers": {
+    "content-type": "application/json",
+    "location": "/api/v1/imports/3",
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T00:17:44.048Z",
+  "body": {
+    "id": 3,
+    "query": "Betelgeuse",
+    "status": "queued",
+    "message": null,
+    "resultSlugs": [],
+    "runId": null,
+    "createdAt": "2026-10-07T00:17:44.008280Z",
+    "startedAt": null,
+    "finishedAt": null
+  }
+}

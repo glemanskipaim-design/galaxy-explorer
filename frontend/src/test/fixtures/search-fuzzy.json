@@ -1,0 +1,29 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/search?q=Betelgeuze",
+    "body": null
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T00:17:48.830Z",
+  "body": {
+    "query": "Betelgeuze",
+    "normalizedQuery": "betelgeuze",
+    "hits": [
+      {
+        "slug": "betelgeuse",
+        "displayName": "Betelgeuse",
+        "categoryCode": "star_supergiant",
+        "categoryName": "Estrela supergigante",
+        "matchedIdentifier": "NAME Betelgeuse",
+        "matchType": "FUZZY",
+        "score": 0.5714286
+      }
+    ]
+  }
+}

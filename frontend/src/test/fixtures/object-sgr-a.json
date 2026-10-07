@@ -1,0 +1,262 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/objects/sgr-a",
+    "body": null
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T00:17:52.833Z",
+  "body": {
+    "slug": "sgr-a",
+    "displayName": "Sgr A*",
+    "category": {
+      "code": "x_ray_source",
+      "namePt": "Fonte de raios X",
+      "nameEn": "X-ray source",
+      "basis": "SIMBAD otype=X -> x_ray_source (regra generica do otype, prioridade 0)"
+    },
+    "existenceStatus": "confirmed",
+    "sourceTypes": [
+      {
+        "source": "SIMBAD",
+        "sourceRef": "2419046",
+        "sourceType": "X",
+        "morphType": null
+      }
+    ],
+    "identifiers": [
+      {
+        "identifier": "NAME Sagittarius A",
+        "catalog": "NAME",
+        "isCommonName": true,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "NAME Sagittarius A*",
+        "catalog": "NAME",
+        "isCommonName": true,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "NAME Sgr A",
+        "catalog": "NAME",
+        "isCommonName": true,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "NAME Sgr A *",
+        "catalog": "NAME",
+        "isCommonName": true,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "NAME Sgr A* IR",
+        "catalog": "NAME",
+        "isCommonName": true,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "NAME SgrA*/IR",
+        "catalog": "NAME",
+        "isCommonName": true,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "NAME Sgr A*/L'",
+        "catalog": "NAME",
+        "isCommonName": true,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "AX J1745.6-2900",
+        "catalog": "AX",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "[BGM2005] J174540.08-290028.48",
+        "catalog": "[BGM2005]",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "[BGM2005] J174540.14-290028.40",
+        "catalog": "[BGM2005]",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "CXOGC J174540.0-290027",
+        "catalog": "CXOGC",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "[SKM2002] 28",
+        "catalog": "[SKM2002]",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "SWIFT J1746.3-2850A",
+        "catalog": "SWIFT",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      }
+    ],
+    "position": {
+      "raDeg": 266.41681662499997,
+      "decDeg": -29.00782497222222,
+      "frame": "ICRS",
+      "epoch": "J2000",
+      "source": "SIMBAD",
+      "reference": {
+        "bibcode": "2011AJ....142...35P",
+        "adsUrl": "https://ui.adsabs.harvard.edu/abs/2011AJ....142...35P/abstract"
+      },
+      "retrievedAt": "2026-10-07T00:17:51.033190Z"
+    },
+    "properties": [
+      {
+        "code": "distance",
+        "label": "Distância",
+        "group": "astrometry",
+        "qualifier": "",
+        "available": false,
+        "absence": {
+          "code": "NOT_PROVIDED_BY_SOURCE",
+          "message": "Não disponível na fonte",
+          "snr": null
+        },
+        "preferred": null,
+        "alternatives": []
+      },
+      {
+        "code": "parallax",
+        "label": "Paralaxe",
+        "group": "astrometry",
+        "qualifier": "",
+        "available": false,
+        "absence": {
+          "code": "NOT_PROVIDED_BY_SOURCE",
+          "message": "Não disponível na fonte",
+          "snr": null
+        },
+        "preferred": null,
+        "alternatives": []
+      },
+      {
+        "code": "morph_type",
+        "label": "Tipo morfológico",
+        "group": "classification",
+        "qualifier": "",
+        "available": false,
+        "absence": {
+          "code": "NOT_PROVIDED_BY_SOURCE",
+          "message": "Não disponível na fonte",
+          "snr": null
+        },
+        "preferred": null,
+        "alternatives": []
+      },
+      {
+        "code": "spectral_type",
+        "label": "Tipo espectral",
+        "group": "classification",
+        "qualifier": "",
+        "available": false,
+        "absence": {
+          "code": "NOT_PROVIDED_BY_SOURCE",
+          "message": "Não disponível na fonte",
+          "snr": null
+        },
+        "preferred": null,
+        "alternatives": []
+      },
+      {
+        "code": "radial_velocity",
+        "label": "Velocidade radial",
+        "group": "kinematics",
+        "qualifier": "",
+        "available": false,
+        "absence": {
+          "code": "NOT_PROVIDED_BY_SOURCE",
+          "message": "Não disponível na fonte",
+          "snr": null
+        },
+        "preferred": null,
+        "alternatives": []
+      },
+      {
+        "code": "redshift",
+        "label": "Redshift (z)",
+        "group": "kinematics",
+        "qualifier": "",
+        "available": false,
+        "absence": {
+          "code": "NOT_PROVIDED_BY_SOURCE",
+          "message": "Não disponível na fonte",
+          "snr": null
+        },
+        "preferred": null,
+        "alternatives": []
+      },
+      {
+        "code": "ang_size_major",
+        "label": "Tamanho angular (eixo maior)",
+        "group": "morphology",
+        "qualifier": "",
+        "available": false,
+        "absence": {
+          "code": "NOT_PROVIDED_BY_SOURCE",
+          "message": "Não disponível na fonte",
+          "snr": null
+        },
+        "preferred": null,
+        "alternatives": []
+      },
+      {
+        "code": "ang_size_minor",
+        "label": "Tamanho angular (eixo menor)",
+        "group": "morphology",
+        "qualifier": "",
+        "available": false,
+        "absence": {
+          "code": "NOT_PROVIDED_BY_SOURCE",
+          "message": "Não disponível na fonte",
+          "snr": null
+        },
+        "preferred": null,
+        "alternatives": []
+      },
+      {
+        "code": "app_mag",
+        "label": "Magnitude aparente",
+        "group": "photometry",
+        "qualifier": "",
+        "available": false,
+        "absence": {
+          "code": "NOT_PROVIDED_BY_SOURCE",
+          "message": "Não disponível na fonte",
+          "snr": null
+        },
+        "preferred": null,
+        "alternatives": []
+      }
+    ],
+    "sources": [
+      {
+        "code": "SIMBAD",
+        "name": "SIMBAD Astronomical Database (CDS, Strasbourg)",
+        "homepageUrl": "https://simbad.cds.unistra.fr/simbad/",
+        "termsUrl": "https://cds.unistra.fr/legals/",
+        "acknowledgment": "This research has made use of the SIMBAD database, operated at CDS, Strasbourg, France\n2000,A&AS,143,9, \"The SIMBAD astronomical database\", Wenger et al."
+      }
+    ]
+  }
+}

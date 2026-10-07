@@ -1,0 +1,41 @@
+.error {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid rgba(251, 113, 133, 0.35);
+  background: var(--color-danger-soft);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+}
+
+.error::before {
+  content: '!';
+  display: inline-grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--color-danger);
+  color: var(--color-bg);
+  font-weight: 700;
+  flex: none;
+}
+
+.error p {
+  flex: 1 1 16rem;
+}
+
+.retry {
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-surface-raised);
+  border-radius: var(--radius-pill);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+}
+
+.retry:hover {
+  border-color: var(--color-accent);
+}

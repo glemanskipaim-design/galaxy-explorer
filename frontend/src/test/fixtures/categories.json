@@ -1,0 +1,78 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/categories",
+    "body": null
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T00:17:52.895Z",
+  "body": {
+    "categories": [
+      {
+        "code": "cluster",
+        "namePt": "Aglomerado estelar",
+        "nameEn": "Star cluster",
+        "objectCount": 60
+      },
+      {
+        "code": "brown_dwarf",
+        "namePt": "Anã marrom",
+        "nameEn": "Brown dwarf",
+        "objectCount": 0
+      },
+      {
+        "code": "black_hole",
+        "namePt": "Buraco negro",
+        "nameEn": "Black hole",
+        "objectCount": 0
+      },
+      {
+        "code": "star",
+        "namePt": "Estrela",
+        "nameEn": "Star",
+        "objectCount": 4
+      },
+      {
+        "code": "exoplanet",
+        "namePt": "Exoplaneta",
+        "nameEn": "Exoplanet",
+        "objectCount": 0
+      },
+      {
+        "code": "x_ray_source",
+        "namePt": "Fonte de raios X",
+        "nameEn": "X-ray source",
+        "objectCount": 1
+      },
+      {
+        "code": "galaxy",
+        "namePt": "Galáxia",
+        "nameEn": "Galaxy",
+        "objectCount": 39
+      },
+      {
+        "code": "nebula",
+        "namePt": "Nebulosa",
+        "nameEn": "Nebula",
+        "objectCount": 8
+      },
+      {
+        "code": "agn",
+        "namePt": "Núcleo galáctico ativo (AGN)",
+        "nameEn": "Active galactic nucleus",
+        "objectCount": 1
+      },
+      {
+        "code": "other",
+        "namePt": "Outro",
+        "nameEn": "Other",
+        "objectCount": 2
+      }
+    ]
+  }
+}

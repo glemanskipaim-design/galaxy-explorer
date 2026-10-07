@@ -1,0 +1,209 @@
+{
+  "api": "http://127.0.0.1:8081/api/v1",
+  "captures": [
+    {
+      "name": "categories",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); apos os imports acima",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "category-400",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado)",
+      "capturedAt": "2026-10-07T15:42:41.099Z"
+    },
+    {
+      "name": "category-404",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado)",
+      "capturedAt": "2026-10-07T15:42:41.099Z"
+    },
+    {
+      "name": "category-galaxy-p1",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado)",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "category-galaxy-p2",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado)",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "category-galaxy-p3-beyond",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); offset alem do total",
+      "capturedAt": "2026-10-07T15:42:41.099Z"
+    },
+    {
+      "name": "import-400",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado)",
+      "capturedAt": "2026-10-07T15:42:41.099Z"
+    },
+    {
+      "name": "import-404",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado)",
+      "capturedAt": "2026-10-07T15:42:41.099Z"
+    },
+    {
+      "name": "import-429",
+      "phase": "degraded",
+      "condition": "2a execucao do backend: GALAXY_SIMBAD_SESAME_URL=http://127.0.0.1:9/ (porta sem servico), GALAXY_IMPORTS_QUEUE_CAPACITY=1 — nao toca o CDS; 3o POST seguido com fila cheia",
+      "capturedAt": "2026-10-07T00:19:14.286Z"
+    },
+    {
+      "name": "import-betelgeuse-created",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); termo fora do catalogo (consulta real ao CDS); POST /imports {\"query\":\"Betelgeuse\"}",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "import-betelgeuse-running",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); termo fora do catalogo (consulta real ao CDS); polling GET /imports/3",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "import-betelgeuse-succeeded",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); termo fora do catalogo (consulta real ao CDS); polling GET /imports/3",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "import-failed-created",
+      "phase": "degraded",
+      "condition": "2a execucao do backend: GALAXY_SIMBAD_SESAME_URL=http://127.0.0.1:9/ (porta sem servico), GALAXY_IMPORTS_QUEUE_CAPACITY=1 — nao toca o CDS; POST {\"query\":\"Deneb\"}",
+      "capturedAt": "2026-10-07T00:19:14.286Z"
+    },
+    {
+      "name": "import-failed-failed",
+      "phase": "degraded",
+      "condition": "2a execucao do backend: GALAXY_SIMBAD_SESAME_URL=http://127.0.0.1:9/ (porta sem servico), GALAXY_IMPORTS_QUEUE_CAPACITY=1 — nao toca o CDS; polling GET /imports/7",
+      "capturedAt": "2026-10-07T00:19:14.286Z"
+    },
+    {
+      "name": "import-failed-running",
+      "phase": "degraded",
+      "condition": "2a execucao do backend: GALAXY_SIMBAD_SESAME_URL=http://127.0.0.1:9/ (porta sem servico), GALAXY_IMPORTS_QUEUE_CAPACITY=1 — nao toca o CDS; polling GET /imports/7",
+      "capturedAt": "2026-10-07T00:19:14.286Z"
+    },
+    {
+      "name": "import-not-found-created",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); termo inexistente (consulta real ao Sesame); POST /imports {\"query\":\"XyzzyNotAnObject123\"}",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "import-not-found-not-found",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); termo inexistente (consulta real ao Sesame); polling GET /imports/5",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "import-not-found-running",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); termo inexistente (consulta real ao Sesame); polling GET /imports/5",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "import-sgr-a-created",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); Sgr A* fora do catalogo; POST /imports {\"query\":\"Sgr A*\"}",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "import-sgr-a-running",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); Sgr A* fora do catalogo; polling GET /imports/6",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "import-sgr-a-succeeded",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); Sgr A* fora do catalogo; polling GET /imports/6",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "import-vega-created",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); termo ja presente no catalogo; POST /imports {\"query\":\"Vega\"}",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "import-vega-succeeded",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); termo ja presente no catalogo; polling GET /imports/4",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "object-404",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado)",
+      "capturedAt": "2026-10-07T15:42:41.099Z"
+    },
+    {
+      "name": "object-betelgeuse",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); apos import de Betelgeuse",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "object-messier-100",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); varredura: primeiro exemplo de distance-mpc",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "object-messier-103",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); varredura: primeiro exemplo de reference-null",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "object-messier-31",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado)",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "object-sgr-a",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); slug lido de GET /search?q=Sgr A*",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "object-vega",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado)",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "search-400",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); q com 101 caracteres",
+      "capturedAt": "2026-10-07T15:42:41.099Z"
+    },
+    {
+      "name": "search-empty-betelgeuse",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); antes de importar Betelgeuse",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "search-fuzzy",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado); grafia errada de Betelgeuse",
+      "capturedAt": "2026-10-07T00:17:56.794Z"
+    },
+    {
+      "name": "search-m31",
+      "phase": "main",
+      "condition": "backend normal (seed Messier carregado)",
+      "capturedAt": "2026-10-07T15:42:41.099Z"
+    }
+  ]
+}

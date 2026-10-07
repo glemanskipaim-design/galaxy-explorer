@@ -13,3 +13,6 @@ Thumbs.db
 # Ambiente
 .env
 *.log
+frontend/coverage/
+.env.local
+.env.*.local

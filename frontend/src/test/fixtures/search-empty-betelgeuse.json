@@ -1,0 +1,19 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/search?q=Betelgeuse",
+    "body": null
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T00:17:43.995Z",
+  "body": {
+    "query": "Betelgeuse",
+    "normalizedQuery": "betelgeuse",
+    "hits": []
+  }
+}

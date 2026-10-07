@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/categories/nao_existe/objects",
+    "body": null
+  },
+  "status": 404,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T15:42:40.953Z",
+  "body": {
+    "error": {
+      "code": "CATEGORY_NOT_FOUND",
+      "message": "categoria não encontrada",
+      "details": null
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.link {
+  overflow-wrap: anywhere;
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 0.15em;
+  font-size: 0.85em;
+  text-decoration: none;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.link:hover .arrow {
+  transform: translate(1px, -1px);
+}

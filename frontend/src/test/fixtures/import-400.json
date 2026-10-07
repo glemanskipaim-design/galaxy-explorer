@@ -1,0 +1,28 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/imports",
+    "body": {
+      "query": "<b>x</b>"
+    }
+  },
+  "status": 400,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T15:42:41.097Z",
+  "body": {
+    "error": {
+      "code": "VALIDATION_FAILED",
+      "message": "corpo da requisição inválido",
+      "details": [
+        {
+          "message": "use apenas letras, dígitos, espaço e . + - * ' _ ( ) / [ ] :",
+          "field": "query"
+        }
+      ]
+    }
+  }
+}

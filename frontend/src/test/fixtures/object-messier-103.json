@@ -1,0 +1,496 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/objects/messier-103",
+    "body": null
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T00:17:53.591Z",
+  "body": {
+    "slug": "messier-103",
+    "displayName": "M 103",
+    "category": {
+      "code": "cluster_open",
+      "namePt": "Aglomerado aberto",
+      "nameEn": "Open cluster",
+      "basis": "SIMBAD otype=OpC -> cluster_open (regra generica do otype, prioridade 0)"
+    },
+    "existenceStatus": "confirmed",
+    "sourceTypes": [
+      {
+        "source": "SIMBAD",
+        "sourceRef": "168578",
+        "sourceType": "OpC",
+        "morphType": null
+      }
+    ],
+    "identifiers": [
+      {
+        "identifier": "C 0129+604",
+        "catalog": "C",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "[KPR2004b]  18",
+        "catalog": "[KPR2004b]",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "[KPS2012] MWSC 0124",
+        "catalog": "[KPS2012]",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "M 103",
+        "catalog": "M",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "NGC   581",
+        "catalog": "NGC",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "OCISM  75",
+        "catalog": "OCISM",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "OCl  326",
+        "catalog": "OCl",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      }
+    ],
+    "position": {
+      "raDeg": 23.339166666666667,
+      "decDeg": 60.65888888888889,
+      "frame": "ICRS",
+      "epoch": "J2000",
+      "source": "SIMBAD",
+      "reference": {
+        "bibcode": "2021A&A...647A..19T",
+        "adsUrl": "https://ui.adsabs.harvard.edu/abs/2021A%26A...647A..19T/abstract"
+      },
+      "retrievedAt": "2026-10-06T15:42:49.098485Z"
+    },
+    "properties": [
+      {
+        "code": "distance",
+        "label": "Distância",
+        "group": "astrometry",
+        "qualifier": "",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 1691,
+          "value": 2680.9651474530833,
+          "errMinus": 21.3906793679771,
+          "errPlus": 21.737555249619618,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "pc",
+          "originalValue": "2680.9651474530833",
+          "originalUnit": "pc",
+          "originalError": null,
+          "epistemic": "computed_by_us",
+          "method": "1/plx",
+          "derivedFrom": [
+            1679
+          ],
+          "source": "SIMBAD",
+          "dataset": "computed:inverse_parallax",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%20103",
+          "reference": {
+            "bibcode": "2020A&A...633A..99C",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2020A%26A...633A..99C/abstract"
+          },
+          "retrievedAt": "2026-10-06T15:42:49.098485Z"
+        },
+        "alternatives": [
+          {
+            "id": 1686,
+            "value": 2194,
+            "errMinus": null,
+            "errPlus": null,
+            "limitFlag": null,
+            "valueText": null,
+            "unit": "pc",
+            "originalValue": "2194",
+            "originalUnit": "pc",
+            "originalError": null,
+            "epistemic": "derived_by_source",
+            "method": "ST-L",
+            "derivedFrom": [],
+            "source": "SIMBAD",
+            "dataset": "mesDistance:2005A&A...438.1163K:ST-L",
+            "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%20103",
+            "reference": {
+              "bibcode": "2005A&A...438.1163K",
+              "adsUrl": "https://ui.adsabs.harvard.edu/abs/2005A%26A...438.1163K/abstract"
+            },
+            "retrievedAt": "2026-10-06T15:42:50.227604Z"
+          },
+          {
+            "id": 1687,
+            "value": 2200,
+            "errMinus": null,
+            "errPlus": null,
+            "limitFlag": null,
+            "valueText": null,
+            "unit": "pc",
+            "originalValue": "2200",
+            "originalUnit": "pc",
+            "originalError": null,
+            "epistemic": "derived_by_source",
+            "method": null,
+            "derivedFrom": [],
+            "source": "SIMBAD",
+            "dataset": "mesDistance:2017AstBu..72..257L:",
+            "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%20103",
+            "reference": {
+              "bibcode": "2017AstBu..72..257L",
+              "adsUrl": "https://ui.adsabs.harvard.edu/abs/2017AstBu..72..257L/abstract"
+            },
+            "retrievedAt": "2026-10-06T15:42:50.227604Z"
+          },
+          {
+            "id": 1688,
+            "value": 2061,
+            "errMinus": 258,
+            "errPlus": 258,
+            "limitFlag": null,
+            "valueText": null,
+            "unit": "pc",
+            "originalValue": "2061",
+            "originalUnit": "pc",
+            "originalError": null,
+            "epistemic": "derived_by_source",
+            "method": "paral",
+            "derivedFrom": [],
+            "source": "SIMBAD",
+            "dataset": "mesDistance:2019MNRAS.486.5726D:paral",
+            "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%20103",
+            "reference": {
+              "bibcode": "2019MNRAS.486.5726D",
+              "adsUrl": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.486.5726D/abstract"
+            },
+            "retrievedAt": "2026-10-06T15:42:50.227604Z"
+          },
+          {
+            "id": 1689,
+            "value": 2502,
+            "errMinus": null,
+            "errPlus": null,
+            "limitFlag": null,
+            "valueText": null,
+            "unit": "pc",
+            "originalValue": "2502",
+            "originalUnit": "pc",
+            "originalError": null,
+            "epistemic": "derived_by_source",
+            "method": "paral",
+            "derivedFrom": [],
+            "source": "SIMBAD",
+            "dataset": "mesDistance:2021A&A...651A.104P:paral",
+            "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%20103",
+            "reference": {
+              "bibcode": "2021A&A...651A.104P",
+              "adsUrl": "https://ui.adsabs.harvard.edu/abs/2021A%26A...651A.104P/abstract"
+            },
+            "retrievedAt": "2026-10-06T15:42:50.227604Z"
+          },
+          {
+            "id": 1690,
+            "value": 2292,
+            "errMinus": 89,
+            "errPlus": 89,
+            "limitFlag": null,
+            "valueText": null,
+            "unit": "pc",
+            "originalValue": "2292",
+            "originalUnit": "pc",
+            "originalError": null,
+            "epistemic": "derived_by_source",
+            "method": "paral",
+            "derivedFrom": [],
+            "source": "SIMBAD",
+            "dataset": "mesDistance:2021MNRAS.504..356D:paral",
+            "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%20103",
+            "reference": {
+              "bibcode": "2021MNRAS.504..356D",
+              "adsUrl": "https://ui.adsabs.harvard.edu/abs/2021MNRAS.504..356D/abstract"
+            },
+            "retrievedAt": "2026-10-06T15:42:50.227604Z"
+          }
+        ]
+      },
+      {
+        "code": "parallax",
+        "label": "Paralaxe",
+        "group": "astrometry",
+        "qualifier": "",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 1679,
+          "value": 0.373,
+          "errMinus": 0.003,
+          "errPlus": 0.003,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "mas",
+          "originalValue": "0.373",
+          "originalUnit": "mas",
+          "originalError": null,
+          "epistemic": "observed",
+          "method": null,
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "basic",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%20103",
+          "reference": {
+            "bibcode": "2020A&A...633A..99C",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2020A%26A...633A..99C/abstract"
+          },
+          "retrievedAt": "2026-10-06T15:42:49.098485Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "morph_type",
+        "label": "Tipo morfológico",
+        "group": "classification",
+        "qualifier": "",
+        "available": false,
+        "absence": {
+          "code": "NOT_PROVIDED_BY_SOURCE",
+          "message": "Não disponível na fonte",
+          "snr": null
+        },
+        "preferred": null,
+        "alternatives": []
+      },
+      {
+        "code": "spectral_type",
+        "label": "Tipo espectral",
+        "group": "classification",
+        "qualifier": "",
+        "available": false,
+        "absence": {
+          "code": "NOT_PROVIDED_BY_SOURCE",
+          "message": "Não disponível na fonte",
+          "snr": null
+        },
+        "preferred": null,
+        "alternatives": []
+      },
+      {
+        "code": "radial_velocity",
+        "label": "Velocidade radial",
+        "group": "kinematics",
+        "qualifier": "",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 1681,
+          "value": -45.33,
+          "errMinus": 0.32,
+          "errPlus": 0.32,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "km/s",
+          "originalValue": "-45.33",
+          "originalUnit": "km.s-1",
+          "originalError": null,
+          "epistemic": "observed",
+          "method": "SIMBAD rvz_type=v",
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "basic",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%20103",
+          "reference": {
+            "bibcode": "2019MNRAS.486.5726D",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.486.5726D/abstract"
+          },
+          "retrievedAt": "2026-10-06T15:42:49.098485Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "redshift",
+        "label": "Redshift (z)",
+        "group": "kinematics",
+        "qualifier": "",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 1680,
+          "value": -0.00015119317466538718,
+          "errMinus": null,
+          "errPlus": null,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": null,
+          "originalValue": "-1.5119317466538718E-4",
+          "originalUnit": null,
+          "originalError": null,
+          "epistemic": "derived_by_source",
+          "method": "SIMBAD rvz_type=v",
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "basic",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%20103",
+          "reference": {
+            "bibcode": "2019MNRAS.486.5726D",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2019MNRAS.486.5726D/abstract"
+          },
+          "retrievedAt": "2026-10-06T15:42:49.098485Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "ang_size_major",
+        "label": "Tamanho angular (eixo maior)",
+        "group": "morphology",
+        "qualifier": "",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 1682,
+          "value": 7.4,
+          "errMinus": null,
+          "errPlus": null,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "arcmin",
+          "originalValue": "7.4",
+          "originalUnit": "arcmin",
+          "originalError": null,
+          "epistemic": "observed",
+          "method": null,
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "basic",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%20103",
+          "reference": {
+            "bibcode": "2020A&A...633A..99C",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2020A%26A...633A..99C/abstract"
+          },
+          "retrievedAt": "2026-10-06T15:42:49.098485Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "ang_size_minor",
+        "label": "Tamanho angular (eixo menor)",
+        "group": "morphology",
+        "qualifier": "",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 1683,
+          "value": 7.4,
+          "errMinus": null,
+          "errPlus": null,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "arcmin",
+          "originalValue": "7.4",
+          "originalUnit": "arcmin",
+          "originalError": null,
+          "epistemic": "observed",
+          "method": null,
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "basic",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%20103",
+          "reference": {
+            "bibcode": "2020A&A...633A..99C",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2020A%26A...633A..99C/abstract"
+          },
+          "retrievedAt": "2026-10-06T15:42:49.098485Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "app_mag",
+        "label": "Magnitude aparente",
+        "group": "photometry",
+        "qualifier": "B",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 1684,
+          "value": 7.72,
+          "errMinus": null,
+          "errPlus": null,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "mag",
+          "originalValue": "7.72",
+          "originalUnit": null,
+          "originalError": null,
+          "epistemic": "observed",
+          "method": null,
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "flux",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%20103",
+          "reference": null,
+          "retrievedAt": "2026-10-06T15:42:49.633979Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "app_mag",
+        "label": "Magnitude aparente",
+        "group": "photometry",
+        "qualifier": "V",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 1685,
+          "value": 7.4,
+          "errMinus": null,
+          "errPlus": null,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "mag",
+          "originalValue": "7.4",
+          "originalUnit": null,
+          "originalError": null,
+          "epistemic": "observed",
+          "method": null,
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "flux",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=M%20103",
+          "reference": null,
+          "retrievedAt": "2026-10-06T15:42:49.633979Z"
+        },
+        "alternatives": []
+      }
+    ],
+    "sources": [
+      {
+        "code": "SIMBAD",
+        "name": "SIMBAD Astronomical Database (CDS, Strasbourg)",
+        "homepageUrl": "https://simbad.cds.unistra.fr/simbad/",
+        "termsUrl": "https://cds.unistra.fr/legals/",
+        "acknowledgment": "This research has made use of the SIMBAD database, operated at CDS, Strasbourg, France\n2000,A&AS,143,9, \"The SIMBAD astronomical database\", Wenger et al."
+      }
+    ]
+  }
+}

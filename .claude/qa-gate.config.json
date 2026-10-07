@@ -1,6 +1,6 @@
 {
-  "test_cmd": "cd backend && .\\mvnw.cmd -q -B test",
-  "lint_cmd": null,
+  "test_cmd": "cd frontend && npm test && cd ..\\backend && .\\mvnw.cmd -q -B test",
+  "lint_cmd": "cd frontend && npm run lint && npm run typecheck",
   "require_hattori": true,
   "require_yagyu_always": false
 }

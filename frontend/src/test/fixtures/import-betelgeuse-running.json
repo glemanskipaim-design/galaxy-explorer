@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/imports/3",
+    "body": null
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T00:17:44.072Z",
+  "body": {
+    "id": 3,
+    "query": "Betelgeuse",
+    "status": "running",
+    "message": null,
+    "resultSlugs": [],
+    "runId": null,
+    "createdAt": "2026-10-07T00:17:44.008280Z",
+    "startedAt": "2026-10-07T00:17:44.036880Z",
+    "finishedAt": null
+  }
+}

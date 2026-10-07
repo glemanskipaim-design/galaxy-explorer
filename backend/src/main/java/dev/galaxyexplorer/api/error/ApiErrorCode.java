@@ -8,6 +8,7 @@ public enum ApiErrorCode {
     OBJECT_NOT_FOUND(HttpStatus.NOT_FOUND),
     IMPORT_NOT_FOUND(HttpStatus.NOT_FOUND),
     IMPORT_QUEUE_FULL(HttpStatus.TOO_MANY_REQUESTS),
+    CATEGORY_NOT_FOUND(HttpStatus.NOT_FOUND),
     INTERNAL_ERROR(HttpStatus.INTERNAL_SERVER_ERROR);
 
     private final HttpStatus status;

@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "POST",
+    "path": "/api/v1/imports",
+    "body": {
+      "query": "Deneb"
+    }
+  },
+  "status": 202,
+  "headers": {
+    "content-type": "application/json",
+    "location": "/api/v1/imports/7",
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T00:19:09.958Z",
+  "body": {
+    "id": 7,
+    "query": "Deneb",
+    "status": "queued",
+    "message": null,
+    "resultSlugs": [],
+    "runId": null,
+    "createdAt": "2026-10-07T00:19:09.902618Z",
+    "startedAt": null,
+    "finishedAt": null
+  }
+}

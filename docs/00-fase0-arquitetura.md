@@ -401,9 +401,12 @@ Ordem de decisão para marcar `is_preferred`:
 2. Empate → menor incerteza relativa.
 3. Empate → coleta mais recente.
 
-**Exibição do conflito:** se dois valores diferem mais que 3σ combinados (ou
->10% quando não há incerteza), a UI mostra selo "Fontes divergem" e lista
-todos. Exemplo real já identificado: redshift de M31 (SIMBAD vs NED).
+**Exibição do conflito** (regra esclarecida pelo usuário em 2026-10-07): se
+**ao menos um** dos valores tem incerteza, divergem quando
+|a−b| > 3·√(σa²+σb²) (σ ausente conta como 0); a regra dos 10% vale só
+quando **nenhum** dos dois tem incerteza. A UI mostra selo "Fontes divergem"
+e lista todos. Implementação: `frontend/src/domain/conflict.ts` (migra para o
+backend na Fase 3, com o NED). Exemplo real já identificado: redshift de M31 (SIMBAD vs NED).
 
 ---
 

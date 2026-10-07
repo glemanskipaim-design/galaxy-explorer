@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/imports/7",
+    "body": null
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T00:19:14.279Z",
+  "body": {
+    "id": 7,
+    "query": "Deneb",
+    "status": "failed",
+    "message": "Fonte indisponível no momento (SIMBAD/CDS); tente novamente mais tarde (run 10).",
+    "resultSlugs": [],
+    "runId": 10,
+    "createdAt": "2026-10-07T00:19:09.902618Z",
+    "startedAt": "2026-10-07T00:19:09.934440Z",
+    "finishedAt": "2026-10-07T00:19:14.216178Z"
+  }
+}

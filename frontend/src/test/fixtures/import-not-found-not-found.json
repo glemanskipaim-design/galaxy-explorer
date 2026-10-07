@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/imports/5",
+    "body": null
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T00:17:49.664Z",
+  "body": {
+    "id": 5,
+    "query": "XyzzyNotAnObject123",
+    "status": "not_found",
+    "message": "Objeto não encontrado em SIMBAD",
+    "resultSlugs": [],
+    "runId": 8,
+    "createdAt": "2026-10-07T00:17:48.941006Z",
+    "startedAt": "2026-10-07T00:17:48.948802Z",
+    "finishedAt": "2026-10-07T00:17:49.572606Z"
+  }
+}

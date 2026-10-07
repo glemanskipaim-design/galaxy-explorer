@@ -1,0 +1,170 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/categories/galaxy/objects?limit=24&offset=0",
+    "body": null
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T00:17:52.934Z",
+  "body": {
+    "category": {
+      "code": "galaxy",
+      "namePt": "Galáxia",
+      "nameEn": "Galaxy"
+    },
+    "total": 39,
+    "limit": 24,
+    "offset": 0,
+    "items": [
+      {
+        "slug": "messier-31",
+        "displayName": "M 31",
+        "categoryCode": "galaxy_spiral",
+        "categoryName": "Galáxia espiral"
+      },
+      {
+        "slug": "messier-32",
+        "displayName": "M 32",
+        "categoryCode": "galaxy_elliptical",
+        "categoryName": "Galáxia elíptica"
+      },
+      {
+        "slug": "messier-33",
+        "displayName": "M 33",
+        "categoryCode": "galaxy_spiral",
+        "categoryName": "Galáxia espiral"
+      },
+      {
+        "slug": "messier-49",
+        "displayName": "M 49",
+        "categoryCode": "galaxy_elliptical",
+        "categoryName": "Galáxia elíptica"
+      },
+      {
+        "slug": "messier-51",
+        "displayName": "M 51",
+        "categoryCode": "galaxy_spiral",
+        "categoryName": "Galáxia espiral"
+      },
+      {
+        "slug": "messier-58",
+        "displayName": "M 58",
+        "categoryCode": "galaxy_spiral",
+        "categoryName": "Galáxia espiral"
+      },
+      {
+        "slug": "messier-59",
+        "displayName": "M 59",
+        "categoryCode": "galaxy_elliptical",
+        "categoryName": "Galáxia elíptica"
+      },
+      {
+        "slug": "messier-60",
+        "displayName": "M 60",
+        "categoryCode": "galaxy_lenticular",
+        "categoryName": "Galáxia lenticular"
+      },
+      {
+        "slug": "messier-61",
+        "displayName": "M 61",
+        "categoryCode": "galaxy_spiral",
+        "categoryName": "Galáxia espiral"
+      },
+      {
+        "slug": "messier-63",
+        "displayName": "M 63",
+        "categoryCode": "galaxy_spiral",
+        "categoryName": "Galáxia espiral"
+      },
+      {
+        "slug": "messier-64",
+        "displayName": "M 64",
+        "categoryCode": "galaxy_spiral",
+        "categoryName": "Galáxia espiral"
+      },
+      {
+        "slug": "messier-65",
+        "displayName": "M 65",
+        "categoryCode": "galaxy_spiral",
+        "categoryName": "Galáxia espiral"
+      },
+      {
+        "slug": "messier-66",
+        "displayName": "M 66",
+        "categoryCode": "galaxy_spiral",
+        "categoryName": "Galáxia espiral"
+      },
+      {
+        "slug": "messier-74",
+        "displayName": "M 74",
+        "categoryCode": "galaxy_spiral",
+        "categoryName": "Galáxia espiral"
+      },
+      {
+        "slug": "messier-77",
+        "displayName": "M 77",
+        "categoryCode": "galaxy_spiral",
+        "categoryName": "Galáxia espiral"
+      },
+      {
+        "slug": "messier-81",
+        "displayName": "M 81",
+        "categoryCode": "galaxy_spiral",
+        "categoryName": "Galáxia espiral"
+      },
+      {
+        "slug": "messier-82",
+        "displayName": "M 82",
+        "categoryCode": "galaxy_spiral",
+        "categoryName": "Galáxia espiral"
+      },
+      {
+        "slug": "messier-83",
+        "displayName": "M 83",
+        "categoryCode": "galaxy_spiral",
+        "categoryName": "Galáxia espiral"
+      },
+      {
+        "slug": "messier-84",
+        "displayName": "M 84",
+        "categoryCode": "galaxy_elliptical",
+        "categoryName": "Galáxia elíptica"
+      },
+      {
+        "slug": "messier-85",
+        "displayName": "M 85",
+        "categoryCode": "galaxy_lenticular",
+        "categoryName": "Galáxia lenticular"
+      },
+      {
+        "slug": "messier-86",
+        "displayName": "M 86",
+        "categoryCode": "galaxy_elliptical",
+        "categoryName": "Galáxia elíptica"
+      },
+      {
+        "slug": "messier-87",
+        "displayName": "M 87",
+        "categoryCode": "galaxy_elliptical",
+        "categoryName": "Galáxia elíptica"
+      },
+      {
+        "slug": "messier-88",
+        "displayName": "M 88",
+        "categoryCode": "galaxy_spiral",
+        "categoryName": "Galáxia espiral"
+      },
+      {
+        "slug": "messier-89",
+        "displayName": "M 89",
+        "categoryCode": "galaxy_lenticular",
+        "categoryName": "Galáxia lenticular"
+      }
+    ]
+  }
+}

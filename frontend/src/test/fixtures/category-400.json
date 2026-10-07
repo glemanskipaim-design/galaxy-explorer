@@ -1,0 +1,26 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/categories/galaxy/objects?limit=0",
+    "body": null
+  },
+  "status": 400,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-07T15:42:40.996Z",
+  "body": {
+    "error": {
+      "code": "VALIDATION_FAILED",
+      "message": "parâmetros inválidos",
+      "details": [
+        {
+          "message": "must be greater than or equal to 1",
+          "field": "limit"
+        }
+      ]
+    }
+  }
+}
