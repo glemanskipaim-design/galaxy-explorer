@@ -1,0 +1,11 @@
+# Curadoria manual de imagens ESA (Bloco 3). Lida pelo comando "images".
+# Colunas: object_query,provider,image_id,action,note
+#   object_query: termo resolvido pela busca EXATA do catalogo local (ex.: M 42, Betelgeuse)
+#   provider:     HUBBLE ou WEBB
+#   image_id:     id da imagem no site (ex.: heic0601a)
+#   action:       include (inclui), hero (inclui e manda ser o hero), exclude (a selecao automatica nao usa)
+#   note:         comentario livre (pode conter virgulas)
+# A curadoria ESCOLHE; credito, licenca e titulo vem sempre da AVM. include/hero passam pelas mesmas
+# regras (nome + posicao); Artwork/Chart so entram por aqui, sempre com selo e nunca como hero.
+# Qualquer linha invalida aborta o comando com a lista de problemas.
+object_query,provider,image_id,action,note

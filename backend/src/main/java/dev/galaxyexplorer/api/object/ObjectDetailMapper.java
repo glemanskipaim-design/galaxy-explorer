@@ -2,6 +2,7 @@ package dev.galaxyexplorer.api.object;
 
 import java.util.List;
 
+import dev.galaxyexplorer.api.image.ImageDtoMapper;
 import dev.galaxyexplorer.catalog.read.MeasurementView;
 import dev.galaxyexplorer.catalog.read.ObjectDetail;
 import dev.galaxyexplorer.catalog.read.PropertyView;
@@ -37,8 +38,11 @@ public final class ObjectDetailMapper {
                 .map(s -> new ObjectDetailResponse.Source(s.code(), s.name(), s.homepageUrl(), s.termsUrl(),
                         s.acknowledgment()))
                 .toList();
+        ObjectDetailResponse.ImageAbsence imageAbsence = d.imageAbsence() == null ? null
+                : new ObjectDetailResponse.ImageAbsence(d.imageAbsence().name(), d.imageAbsence().messagePt());
         return new ObjectDetailResponse(d.object().slug(), d.object().displayName(), category,
-                d.object().existenceStatus(), types, identifiers, position, properties, sources);
+                d.object().existenceStatus(), types, identifiers, position, properties, sources,
+                d.images().stream().map(ImageDtoMapper::image).toList(), imageAbsence);
     }
 
     private static ObjectDetailResponse.Property property(PropertyView p) {

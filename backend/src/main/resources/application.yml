@@ -42,3 +42,60 @@ galaxy:
     queue-capacity: 20
     # jobs terminais e payloads crus de imports sem resultado sao apagados apos este prazo
     retention: 30d
+  # ── Imagens (Bloco 3) ────────────────────────────────────────────────
+  media:
+    # Arquivos de imagem hospedados (enderecados por sha256). Relativo ao diretorio
+    # de trabalho do backend; em Docker, monte um volume aqui. Fora do git (.gitignore).
+    storage-dir: ./data/images
+    max-image-bytes: 8388608     # 8 MB; o maior "screen" visto (weic2216b) tem 1,09 MB
+    max-pixels: 40000000         # conferido no cabecalho, antes de decodificar
+    thumb-max-size: 320
+  images:
+    user-agent: "GalaxyExplorer/0.1 (personal research project)"
+    connect-timeout: 10s
+    read-timeout: 60s            # hips2fits com campo grande demora
+    retry-max-attempts: 3
+    retry-initial-backoff: 2s
+    curation-file: images/curation.csv
+    # Unicos hosts com que a ingestao de imagens fala (exatos, https; redirect revalidado).
+    allowed-hosts:
+      - alasky.cds.unistra.fr
+      - alaskybis.cds.unistra.fr
+      - esahubble.org
+      - cdn.esahubble.org
+      - esawebb.org
+      - cdn.esawebb.org
+    hips2fits:
+      base-urls:
+        - https://alasky.cds.unistra.fr/hips-image-services/hips2fits
+        - https://alaskybis.cds.unistra.fr/hips-image-services/hips2fits
+      requests-per-second: 1     # limitador proprio (o do SIMBAD e outro servico)
+      width: 800
+      height: 600
+      fov-factor: 1.25
+      fov-min-deg: 0.1
+      fov-max-deg: 5.0
+      fov-default-deg: 0.25
+      surveys:                   # ordem = preferencia
+        - code: PANSTARRS_COLOR
+          hips-id: CDS/P/PanSTARRS/DR1/color-z-zg-g
+          properties-url: https://alasky.cds.unistra.fr/Pan-STARRS/DR1/color-z-zg-g/properties
+          short-label: PanSTARRS via CDS
+          min-dec-deg: -30
+          max-fov-deg: 1.0
+        - code: DSS2_COLOR
+          hips-id: CDS/P/DSS2/color
+          properties-url: https://alasky.cds.unistra.fr/DSS/DSSColor/properties
+          short-label: DSS2 via CDS
+          min-dec-deg: -90
+          max-fov-deg: 10
+    esa:
+      requests-per-second: 1     # um limitador para esahubble + esawebb + CDNs (mesma organizacao)
+      max-candidates-per-search: 8
+      max-images-per-object: 3   # por site
+      hubble:
+        base-url: https://esahubble.org
+        cdn-url: https://cdn.esahubble.org
+      webb:
+        base-url: https://esawebb.org
+        cdn-url: https://cdn.esawebb.org

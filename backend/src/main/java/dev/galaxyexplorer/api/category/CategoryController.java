@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import dev.galaxyexplorer.api.error.ApiErrorCode;
 import dev.galaxyexplorer.api.error.ApiException;
+import dev.galaxyexplorer.api.image.ImageDtoMapper;
 import dev.galaxyexplorer.catalog.category.CategoryRow;
 import dev.galaxyexplorer.catalog.read.CategoryPage;
 import dev.galaxyexplorer.catalog.read.CategoryQueryService;
@@ -73,7 +74,8 @@ public class CategoryController {
     private static CategoryObjectsResponse.Item toItem(CategoryPage.Item item) {
         CategoryRow category = item.category();
         return new CategoryObjectsResponse.Item(item.object().slug(), item.object().displayName(),
-                category == null ? null : category.code(), category == null ? null : category.namePt());
+                category == null ? null : category.code(), category == null ? null : category.namePt(),
+                ImageDtoMapper.thumbnail(item.thumbnail()));
     }
 
     private static ApiException notFound() {

@@ -81,6 +81,13 @@ public class CelestialObjectRepository {
                 .optional();
     }
 
+    /** Todos os objetos, em ordem natural de nome (comando de imagens). */
+    public List<ObjectRow> findAll() {
+        return jdbc.sql("SELECT * FROM celestial_object ORDER BY display_name COLLATE natural_sort, slug")
+                .query((rs, n) -> map(rs))
+                .list();
+    }
+
     public List<ObjectRow> findByIds(Collection<UUID> ids) {
         if (ids.isEmpty()) {
             return List.of();

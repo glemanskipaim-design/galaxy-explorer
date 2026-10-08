@@ -16,3 +16,5 @@ Thumbs.db
 frontend/coverage/
 .env.local
 .env.*.local
+# Imagens hospedadas pelo backend (Bloco 3): baixadas na ingestao, nunca versionadas
+backend/data/

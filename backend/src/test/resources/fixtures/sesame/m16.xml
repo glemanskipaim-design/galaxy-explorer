@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Sesame xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="https://vizier.cds.unistra.fr/xml/sesame_4x.xsd">
+<Target option="S">
+  <name>M16</name>
+  <!-- Q9557689 #1 -->
+  <Resolver name="Sc=Simbad (CDS, via client/server)"><!--delay: 62ms [2] -->
+    <oid>2585552</oid>
+    <otype>OpC</otype>
+    <jpos>18:18:45.12 -13:47:31.2</jpos>
+    <jradeg>274.688</jradeg>
+    <jdedeg>-13.792</jdedeg>
+    <refPos>2021A&amp;A...647A..19T</refPos>
+    <pm>
+      <v>1.586</v><e>0.023</e><q>C</q><r>2020A&amp;A...633A..99C</r>
+      <pa>174</pa>
+      <pmRA>0.178</pmRA><epmRA>0.014</epmRA>
+      <pmDE>-1.576</pmDE><epmDE>0.018</epmDE>
+    </pm>
+    <Vel><v>18.00</v><e>0.58</e><q>A</q><r>2017AstBu..72..257L</r></Vel>
+    <plx><v>0.566</v><e>0.006</e><q>C</q><r>2020A&amp;A...633A..99C</r></plx>
+    <oname>M  16</oname>
+    <nrefs>1099</nrefs>
+  </Resolver>
+</Target>
+</Sesame>
+<!--- ****Total of 1 crashes -->
+<!-- Configuration tested: /run/sesame.conf -->

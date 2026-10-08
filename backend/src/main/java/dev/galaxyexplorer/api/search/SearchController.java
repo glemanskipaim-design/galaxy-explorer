@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import dev.galaxyexplorer.api.error.ApiErrorCode;
 import dev.galaxyexplorer.api.error.ApiException;
+import dev.galaxyexplorer.api.image.ImageDtoMapper;
 import dev.galaxyexplorer.catalog.identifier.IdentifierNormalizer;
 import dev.galaxyexplorer.catalog.read.SearchService;
 
@@ -20,7 +21,7 @@ import dev.galaxyexplorer.catalog.read.SearchService;
  * <ul>
  *   <li>{@code q}: obrigatorio, 1..100 caracteres apos trim;</li>
  *   <li>200: {@code {query, normalizedQuery, hits:[{slug, displayName, categoryCode, categoryName,
- *       matchedIdentifier, matchType, score}]}} — lista vazia tambem e 200 (o frontend decide
+ *       matchedIdentifier, matchType, score, thumbnail}]}} — lista vazia tambem e 200 (o frontend decide
  *       disparar importacao);</li>
  *   <li>400 {@code VALIDATION_FAILED}: {@code q} ausente, vazio ou longo demais.</li>
  * </ul>
@@ -53,7 +54,8 @@ public class SearchController {
         }
         List<SearchHitDto> hits = search.search(query, SearchService.MAX_LIMIT).stream()
                 .map(h -> new SearchHitDto(h.slug(), h.displayName(), h.categoryCode(), h.categoryNamePt(),
-                        h.matchedIdentifier(), h.matchType().name(), h.score()))
+                        h.matchedIdentifier(), h.matchType().name(), h.score(),
+                        ImageDtoMapper.thumbnail(h.thumbnail())))
                 .toList();
         return new SearchResponse(query, normalized, hits);
     }

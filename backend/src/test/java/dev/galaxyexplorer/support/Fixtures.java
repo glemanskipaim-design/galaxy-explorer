@@ -35,6 +35,23 @@ public final class Fixtures {
         }
     }
 
+    /** Bytes exatos de uma fixture binaria (JPG real). */
+    public static byte[] readBytes(String name) {
+        String path = "/fixtures/" + name;
+        try (InputStream in = Fixtures.class.getResourceAsStream(path)) {
+            if (in == null) {
+                throw new IllegalArgumentException("fixture inexistente: " + path);
+            }
+            return in.readAllBytes();
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+    }
+
+    public static boolean exists(String name) {
+        return Fixtures.class.getResource("/fixtures/" + name) != null;
+    }
+
     /** Payload TAP do SIMBAD a partir do par {@code simbad/<name>.adql} + {@code simbad/<name>.json}. */
     public static RawPayload payload(String dataset, String name) {
         return RawPayload.of(dataset, SIMBAD_TAP_URL, read("simbad/" + name + ".adql").trim(),

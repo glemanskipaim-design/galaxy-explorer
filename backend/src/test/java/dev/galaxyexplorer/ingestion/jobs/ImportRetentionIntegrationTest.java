@@ -120,4 +120,43 @@ class ImportRetentionIntegrationTest extends IntegrationTestBase {
         assertThat(left).containsExactly(referenced).doesNotContain(orphan);
         assertThat(count("measurement")).isEqualTo(1);
     }
+
+    @Autowired
+    dev.galaxyexplorer.ingestion.images.CutoutIngestion cutouts;
+    @Autowired
+    dev.galaxyexplorer.ingestion.images.ImageTargetLoader targets;
+
+    /** Regressao (Bloco 3): payloads de imagem referenciados por object_image/hips_survey_snapshot ficam. */
+    @Test
+    void imagePayloadsReferencedByObjectImageAndSnapshotSurvive() {
+        pipeline.run(new IngestionRequest(SourceCode.SIMBAD, RunTrigger.SEED, List.of("M51", "M81", "M94")));
+        UUID m51 = jdbc.sql("SELECT id FROM celestial_object WHERE slug = 'messier-51'").query(UUID.class).single();
+        long runId = cutouts.run(targets.load(List.of(m51)), RunTrigger.ON_DEMAND, false).runId();
+        long orphan = rawPayloads.insert(runId, Fixtures.payload("ident", "vega_ident"));
+        // run interrompido: records_ok forcado a 0 (como failDangling deixaria) e envelhecido
+        jdbc.sql("UPDATE ingestion_run SET records_ok = 0 WHERE id = :id").param("id", runId).update();
+        age(runId, 40);
+        List<Long> referenced = jdbc.sql("""
+                SELECT metadata_payload_id FROM object_image UNION SELECT download_payload_id FROM object_image
+                UNION SELECT raw_payload_id FROM hips_survey_snapshot
+                """).query(Long.class).list();
+        assertThat(referenced).hasSize(2); // properties (imagem + snapshot) e download
+
+        retention.purgeExpired(); // nao pode lancar por FK
+
+        assertThat(jdbc.sql("SELECT id FROM raw_payload WHERE run_id = :id").param("id", runId).query(Long.class)
+                .list()).containsExactlyInAnyOrderElementsOf(referenced).doesNotContain(orphan);
+    }
+
+    /** Toda FK para raw_payload tem de estar protegida na retencao (lista conferida contra o catalogo do banco). */
+    @Test
+    void everyForeignKeyToRawPayloadIsKnownToRetention() {
+        List<String> fks = jdbc.sql("""
+                SELECT conrelid::regclass::text || '.' || a.attname
+                FROM pg_constraint c JOIN pg_attribute a ON a.attrelid = c.conrelid AND a.attnum = ANY (c.conkey)
+                WHERE c.contype = 'f' AND c.confrelid = 'raw_payload'::regclass ORDER BY 1
+                """).query(String.class).list();
+        assertThat(fks).containsExactly("hips_survey_snapshot.raw_payload_id", "measurement.raw_payload_id",
+                "object_image.download_payload_id", "object_image.metadata_payload_id");
+    }
 }

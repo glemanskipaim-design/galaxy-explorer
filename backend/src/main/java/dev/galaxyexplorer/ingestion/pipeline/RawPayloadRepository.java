@@ -32,9 +32,11 @@ public class RawPayloadRepository {
      *
      * <p>{@code records_ok = 0} nao basta: um run interrompido (fechado por
      * {@code failDangling}) fica com 0 mas pode ter gravado objetos. Por isso o
-     * {@code NOT EXISTS}: payload referenciado nunca e apagado. Hoje a unica FK para
-     * {@code raw_payload} e {@code measurement.raw_payload_id} (conferido em
-     * {@code pg_constraint}); nova FK para esta tabela tem de entrar aqui.
+     * {@code NOT EXISTS}: payload referenciado nunca e apagado. FKs para {@code raw_payload}
+     * (conferidas em {@code pg_constraint} apos a V8): {@code measurement.raw_payload_id},
+     * {@code object_image.metadata_payload_id}, {@code object_image.download_payload_id} e
+     * {@code hips_survey_snapshot.raw_payload_id}. Nova FK para esta tabela tem de entrar aqui
+     * (ha teste que compara esta lista com {@code pg_constraint}).
      */
     public int deleteForUnproductiveOnDemandRunsBefore(Instant cutoff) {
         return jdbc.sql("""
@@ -43,6 +45,9 @@ public class RawPayloadRepository {
                 WHERE p.run_id = r.id AND r.trigger = 'on_demand' AND r.records_ok = 0
                   AND r.status <> 'running' AND r.finished_at < :cutoff
                   AND NOT EXISTS (SELECT 1 FROM measurement m WHERE m.raw_payload_id = p.id)
+                  AND NOT EXISTS (SELECT 1 FROM object_image i
+                                  WHERE i.metadata_payload_id = p.id OR i.download_payload_id = p.id)
+                  AND NOT EXISTS (SELECT 1 FROM hips_survey_snapshot h WHERE h.raw_payload_id = p.id)
                 """)
                 .param("cutoff", JdbcValues.timestamptz(cutoff))
                 .update();

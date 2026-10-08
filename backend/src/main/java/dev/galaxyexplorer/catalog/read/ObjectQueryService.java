@@ -19,6 +19,8 @@ import dev.galaxyexplorer.catalog.derived.DistanceComputation;
 import dev.galaxyexplorer.catalog.derived.DistanceFromParallax;
 import dev.galaxyexplorer.catalog.identifier.IdentifierRepository;
 import dev.galaxyexplorer.catalog.identifier.IdentifierRow;
+import dev.galaxyexplorer.catalog.image.ObjectImageRepository;
+import dev.galaxyexplorer.catalog.image.ObjectImageRow;
 import dev.galaxyexplorer.catalog.measurement.MeasurementRepository;
 import dev.galaxyexplorer.catalog.measurement.MeasurementRow;
 import dev.galaxyexplorer.catalog.measurement.PropertyDefinition;
@@ -44,11 +46,14 @@ public class ObjectQueryService {
     private final MeasurementRepository measurements;
     private final PropertyDefinitionRepository propertyDefinitions;
     private final SourceRepository sources;
+    private final ObjectImageRepository images;
 
     public ObjectQueryService(CelestialObjectRepository objects, CategoryRepository categories,
                               ObjectSourceTypeRepository sourceTypes, IdentifierRepository identifiers,
                               PositionRepository positions, MeasurementRepository measurements,
-                              PropertyDefinitionRepository propertyDefinitions, SourceRepository sources) {
+                              PropertyDefinitionRepository propertyDefinitions, SourceRepository sources,
+                              ObjectImageRepository images) {
+        this.images = images;
         this.objects = objects;
         this.categories = categories;
         this.sourceTypes = sourceTypes;
@@ -79,9 +84,14 @@ public class ObjectQueryService {
         types.forEach(t -> sourceCodes.add(t.sourceCode()));
         position.ifPresent(p -> sourceCodes.add(p.sourceCode()));
         rows.forEach(m -> sourceCodes.add(m.sourceCode()));
+        List<ObjectImageRow> objectImages = images.findByObject(id);
+        objectImages.forEach(i -> sourceCodes.add(i.sourceCode()));
         List<SourceRow> usedSources = sources.findByCodes(sourceCodes);
+        ImageAbsenceReason absence = !objectImages.isEmpty() ? null
+                : position.isEmpty() ? ImageAbsenceReason.NO_POSITION : ImageAbsenceReason.NOT_AVAILABLE;
 
-        return Optional.of(new ObjectDetail(object, category, types, ids, position, properties, usedSources));
+        return Optional.of(new ObjectDetail(object, category, types, ids, position, properties, usedSources,
+                objectImages, absence));
     }
 
     public List<String> slugsOf(Collection<UUID> ids) {

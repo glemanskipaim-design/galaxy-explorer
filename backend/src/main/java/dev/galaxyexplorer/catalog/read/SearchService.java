@@ -14,6 +14,8 @@ import org.springframework.stereotype.Service;
 import dev.galaxyexplorer.catalog.category.CategoryRepository;
 import dev.galaxyexplorer.catalog.category.CategoryRow;
 import dev.galaxyexplorer.catalog.identifier.IdentifierMatch;
+import dev.galaxyexplorer.catalog.image.HeroThumb;
+import dev.galaxyexplorer.catalog.image.ObjectImageRepository;
 import dev.galaxyexplorer.catalog.identifier.IdentifierNormalizer;
 import dev.galaxyexplorer.catalog.identifier.IdentifierRepository;
 import dev.galaxyexplorer.catalog.object.CelestialObjectRepository;
@@ -32,9 +34,11 @@ public class SearchService {
     private final IdentifierRepository identifiers;
     private final CelestialObjectRepository objects;
     private final CategoryRepository categories;
+    private final ObjectImageRepository images;
 
     public SearchService(IdentifierRepository identifiers, CelestialObjectRepository objects,
-                         CategoryRepository categories) {
+                         CategoryRepository categories, ObjectImageRepository images) {
+        this.images = images;
         this.identifiers = identifiers;
         this.objects = objects;
         this.categories = categories;
@@ -56,6 +60,8 @@ public class SearchService {
         }
         Map<UUID, ObjectRow> rows = objects.findByIds(bestPerObject.keySet()).stream()
                 .collect(Collectors.toMap(ObjectRow::id, Function.identity()));
+        // miniaturas: UMA consulta para todos os objetos (sem N+1)
+        Map<UUID, HeroThumb> thumbs = images.findHeroThumbs(rows.keySet());
         Map<Integer, Optional<CategoryRow>> categoryCache = new LinkedHashMap<>();
         List<SearchHit> hits = new ArrayList<>();
         for (IdentifierMatch m : bestPerObject.values()) {
@@ -67,7 +73,7 @@ public class SearchService {
                     ? Optional.empty()
                     : categoryCache.computeIfAbsent(object.categoryId(), categories::findById);
             hits.add(new SearchHit(object.id(), object.slug(), object.displayName(), category.map(CategoryRow::code).orElse(null),
-                    category.map(CategoryRow::namePt).orElse(null), m.identifier(), type, m.score()));
+                    category.map(CategoryRow::namePt).orElse(null), m.identifier(), type, m.score(), thumbs.get(object.id())));
             if (hits.size() == max) {
                 break;
             }

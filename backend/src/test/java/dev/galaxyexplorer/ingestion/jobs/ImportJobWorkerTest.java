@@ -6,17 +6,25 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.ArgumentMatchers.isNull;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.inOrder;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
 import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.InOrder;
 
+import dev.galaxyexplorer.catalog.read.MatchType;
+import dev.galaxyexplorer.catalog.read.SearchHit;
 import dev.galaxyexplorer.catalog.read.SearchService;
+import dev.galaxyexplorer.ingestion.images.ImageIngestionService;
 import dev.galaxyexplorer.ingestion.pipeline.IngestionPipeline;
 import dev.galaxyexplorer.ingestion.pipeline.IngestionReport;
 import dev.galaxyexplorer.ingestion.pipeline.ObjectOutcome;
@@ -28,7 +36,8 @@ class ImportJobWorkerTest {
     private final ImportJobRepository jobs = mock(ImportJobRepository.class);
     private final SearchService search = mock(SearchService.class);
     private final IngestionPipeline pipeline = mock(IngestionPipeline.class);
-    private final ImportJobWorker worker = new ImportJobWorker(jobs, search, pipeline);
+    private final ImageIngestionService images = mock(ImageIngestionService.class);
+    private final ImportJobWorker worker = new ImportJobWorker(jobs, search, pipeline, images);
 
     private void givenQueuedJob(long id, String query) {
         when(jobs.findById(id)).thenReturn(Optional.of(new ImportJob(id, query, query.toLowerCase(),
@@ -71,6 +80,45 @@ class ImportJobWorkerTest {
         assertThat(ImportJobWorker.userMessage(Kind.WRITE_FAILED, 3L)).isEqualTo("Falha ao gravar no catálogo (run 3).");
         assertThat(ImportJobWorker.userMessage(Kind.SOURCE_UNAVAILABLE, null))
                 .isEqualTo("Fonte indisponível no momento (SIMBAD/CDS); tente novamente mais tarde.");
+    }
+
+    @Test
+    void newObjectGetsItsCutoutBeforeTheJobFinishes() {
+        givenQueuedJob(9, "Rigel");
+        UUID id = UUID.randomUUID();
+        when(pipeline.run(any())).thenReturn(new IngestionReport(43, RunStatus.OK, 1, 0,
+                List.of(ObjectOutcome.written("Rigel", id, "rigel", true)), List.of()));
+
+        worker.execute(9);
+
+        InOrder order = inOrder(images, jobs);
+        order.verify(images).ingestCutoutsAfterImport(List.of(id));
+        order.verify(jobs).markFinished(eq(9L), eq(ImportJobStatus.SUCCEEDED), isNull(), eq(43L), eq(List.of(id)));
+    }
+
+    @Test
+    void cutoutFailureNeverChangesTheJobStatus() {
+        givenQueuedJob(10, "Rigel");
+        UUID id = UUID.randomUUID();
+        when(pipeline.run(any())).thenReturn(new IngestionReport(44, RunStatus.OK, 1, 0,
+                List.of(ObjectOutcome.written("Rigel", id, "rigel", true)), List.of()));
+        doThrow(new IllegalStateException("CDS fora")).when(images).ingestCutoutsAfterImport(any());
+
+        worker.execute(10);
+
+        verify(jobs).markFinished(eq(10L), eq(ImportJobStatus.SUCCEEDED), isNull(), eq(44L), eq(List.of(id)));
+    }
+
+    @Test
+    void alreadyInCatalogDoesNotCallTheCutout() {
+        when(jobs.findById(11L)).thenReturn(Optional.of(new ImportJob(11, "M51", "m51", ImportJobStatus.QUEUED, null,
+                null, List.of(), Instant.EPOCH, null, null)));
+        when(search.search(any(), anyInt())).thenReturn(List.of(new SearchHit(UUID.randomUUID(), "messier-51",
+                "M 51", null, null, "M  51", MatchType.EXACT, 1.0, null)));
+
+        worker.execute(11);
+
+        verifyNoInteractions(images, pipeline);
     }
 
     @Test

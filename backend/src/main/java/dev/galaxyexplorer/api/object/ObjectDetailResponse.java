@@ -3,13 +3,22 @@ package dev.galaxyexplorer.api.object;
 import java.time.Instant;
 import java.util.List;
 
+import dev.galaxyexplorer.api.image.ImageDto;
+
 /**
  * Contrato JSON do detalhe de um objeto. Separado do read model de proposito:
  * o read model pode mudar sem quebrar o frontend.
+ *
+ * @param images       hero primeiro, depois a galeria; lista vazia quando nao ha
+ * @param imageAbsence nao-nulo se e somente se {@code images} e vazia
  */
 public record ObjectDetailResponse(String slug, String displayName, Category category, String existenceStatus,
                                    List<SourceType> sourceTypes, List<Identifier> identifiers, Position position,
-                                   List<Property> properties, List<Source> sources) {
+                                   List<Property> properties, List<Source> sources,
+                                   List<ImageDto> images, ImageAbsence imageAbsence) {
+
+    public record ImageAbsence(String code, String message) {
+    }
 
     /** @param basis raciocinio da classificacao (de onde veio a categoria) */
     public record Category(String code, String namePt, String nameEn, String basis) {

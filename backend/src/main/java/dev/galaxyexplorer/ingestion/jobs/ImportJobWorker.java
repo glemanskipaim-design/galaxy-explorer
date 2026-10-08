@@ -12,6 +12,7 @@ import dev.galaxyexplorer.catalog.SourceCode;
 import dev.galaxyexplorer.catalog.read.MatchType;
 import dev.galaxyexplorer.catalog.read.SearchHit;
 import dev.galaxyexplorer.catalog.read.SearchService;
+import dev.galaxyexplorer.ingestion.images.ImageIngestionService;
 import dev.galaxyexplorer.ingestion.pipeline.IngestionPipeline;
 import dev.galaxyexplorer.ingestion.pipeline.IngestionReport;
 import dev.galaxyexplorer.ingestion.pipeline.IngestionRequest;
@@ -21,6 +22,11 @@ import dev.galaxyexplorer.ingestion.pipeline.RunTrigger;
 /**
  * Executa um job de importacao (na thread do {@code importExecutor}). O job
  * NUNCA fica preso em RUNNING: qualquer excecao nao prevista termina FAILED.
+ *
+ * <p>Objeto novo gravado: o recorte hips2fits e gerado ANTES de fechar o job (ainda em
+ * {@code running}, o frontend mostra "importando…"), so recorte — a ESA fica para o comando
+ * {@code images}. Falha do recorte nunca muda o status do job ({@link
+ * ImageIngestionService#ingestCutoutsAfterImport} nao lanca).
  */
 @Component
 public class ImportJobWorker {
@@ -33,11 +39,14 @@ public class ImportJobWorker {
     private final ImportJobRepository jobs;
     private final SearchService search;
     private final IngestionPipeline pipeline;
+    private final ImageIngestionService images;
 
-    public ImportJobWorker(ImportJobRepository jobs, SearchService search, IngestionPipeline pipeline) {
+    public ImportJobWorker(ImportJobRepository jobs, SearchService search, IngestionPipeline pipeline,
+                           ImageIngestionService images) {
         this.jobs = jobs;
         this.search = search;
         this.pipeline = pipeline;
+        this.images = images;
     }
 
     public void execute(long jobId) {
@@ -61,6 +70,12 @@ public class ImportJobWorker {
             List<UUID> written = outcomes.stream().filter(ObjectOutcome::ok).map(ObjectOutcome::objectId)
                     .filter(Objects::nonNull).distinct().toList();
             if (!written.isEmpty()) {
+                try {
+                    images.ingestCutoutsAfterImport(written);
+                } catch (RuntimeException e) {
+                    // defesa em profundidade: o servico ja nao lanca; imagem nunca derruba a importacao
+                    log.warn("Job {}: recorte apos importacao falhou", jobId, e);
+                }
                 jobs.markFinished(jobId, ImportJobStatus.SUCCEEDED, null, runId, written);
             } else if (!outcomes.isEmpty() && outcomes.stream().allMatch(ObjectOutcome::notFound)) {
                 jobs.markFinished(jobId, ImportJobStatus.NOT_FOUND, NOT_FOUND, runId, List.of());

@@ -22,10 +22,10 @@ import dev.galaxyexplorer.ingestion.pipeline.RawPayloadRepository;
  *   <li>{@code raw_payload} de runs {@code on_demand} que nao gravaram nenhum objeto.
  *       Payloads de runs que gravaram objetos ficam: sao a proveniencia do catalogo.</li>
  * </ul>
- * Nao roda no profile {@code seed} (processo curto, que nao serve importacoes).
+ * Nao roda nos profiles {@code seed} e {@code images} (processos curtos, que nao servem importacoes).
  */
 @Component
-@Profile("!seed")
+@Profile("!seed & !images")
 public class ImportRetention {
 
     private static final Logger log = LoggerFactory.getLogger(ImportRetention.class);

@@ -39,6 +39,42 @@ public record RawPayload(String dataset, String requestUrl, String queryText, St
         return new RawPayload(dataset, requestUrl, queryText, body, format, sha256Hex(body), retrievedAt);
     }
 
+    /**
+     * Registro de um download binario (imagem). {@code raw_payload.body} e jsonb: os bytes nao cabem
+     * ali — o artefato cru e o ARQUIVO em disco, enderecado por sha256. O corpo guarda a referencia
+     * ({@code contentType}, {@code byteLength}, {@code storageKey}) e {@code sha256} e o dos BYTES da
+     * imagem (o mesmo de {@code object_image.content_sha256}), nao o do JSON de referencia.
+     *
+     * @param contentType   {@code Content-Type} recebido
+     * @param byteLength    tamanho dos bytes recebidos
+     * @param contentSha256 sha256 hex dos bytes recebidos
+     * @param storageKey    chave do arquivo gravado ({@code ab/<sha>.jpg})
+     */
+    public static RawPayload ofBinary(String dataset, String requestUrl, String queryText, String contentType,
+                                      long byteLength, String contentSha256, String storageKey,
+                                      Instant retrievedAt) {
+        String body = "{\"contentType\":" + jsonString(contentType) + ",\"byteLength\":" + byteLength
+                + ",\"storageKey\":" + jsonString(storageKey) + "}";
+        return new RawPayload(dataset, requestUrl, queryText, body, BodyFormat.JSON, contentSha256, retrievedAt);
+    }
+
+    private static String jsonString(String s) {
+        if (s == null) {
+            return "null";
+        }
+        StringBuilder out = new StringBuilder("\"");
+        for (char c : s.toCharArray()) {
+            if (c == '"' || c == '\\') {
+                out.append('\\').append(c);
+            } else if (c < 0x20) {
+                out.append(String.format("\\u%04x", (int) c));
+            } else {
+                out.append(c);
+            }
+        }
+        return out.append('"').toString();
+    }
+
     public static String sha256Hex(String body) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
