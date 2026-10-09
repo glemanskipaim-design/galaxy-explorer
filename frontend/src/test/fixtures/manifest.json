@@ -3,39 +3,39 @@
   "captures": [
     {
       "name": "categories",
-      "phase": "main",
-      "condition": "backend normal (seed Messier carregado); apos os imports acima",
-      "capturedAt": "2026-10-07T00:17:56.794Z"
+      "phase": "refresh",
+      "condition": "backend normal (seed Messier carregado); apos os imports acima; refresh apos o comando images",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
     },
     {
       "name": "category-400",
-      "phase": "main",
-      "condition": "backend normal (seed Messier carregado)",
-      "capturedAt": "2026-10-07T15:42:41.099Z"
+      "phase": "refresh",
+      "condition": "backend normal (seed Messier carregado); refresh apos o comando images",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
     },
     {
       "name": "category-404",
-      "phase": "main",
-      "condition": "backend normal (seed Messier carregado)",
-      "capturedAt": "2026-10-07T15:42:41.099Z"
+      "phase": "refresh",
+      "condition": "backend normal (seed Messier carregado); refresh apos o comando images",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
     },
     {
       "name": "category-galaxy-p1",
-      "phase": "main",
-      "condition": "backend normal (seed Messier carregado)",
-      "capturedAt": "2026-10-07T00:17:56.794Z"
+      "phase": "refresh",
+      "condition": "backend normal (seed Messier carregado); refresh apos o comando images",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
     },
     {
       "name": "category-galaxy-p2",
-      "phase": "main",
-      "condition": "backend normal (seed Messier carregado)",
-      "capturedAt": "2026-10-07T00:17:56.794Z"
+      "phase": "refresh",
+      "condition": "backend normal (seed Messier carregado); refresh apos o comando images",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
     },
     {
       "name": "category-galaxy-p3-beyond",
-      "phase": "main",
-      "condition": "backend normal (seed Messier carregado); offset alem do total",
-      "capturedAt": "2026-10-07T15:42:41.099Z"
+      "phase": "refresh",
+      "condition": "backend normal (seed Messier carregado); offset alem do total; refresh apos o comando images",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
     },
     {
       "name": "import-400",
@@ -110,6 +110,24 @@
       "capturedAt": "2026-10-07T00:17:56.794Z"
     },
     {
+      "name": "import-rigel-created",
+      "phase": "noimage",
+      "condition": "backend com GALAXY_IMAGES_HIPS2FITS_BASEURLS_0/_1=http://127.0.0.1:9/hips2fits (recorte sob demanda falha; SIMBAD/Sesame normais); termo fora do catalogo; POST /imports {\"query\":\"Rigel\"}",
+      "capturedAt": "2026-10-09T00:16:27.530Z"
+    },
+    {
+      "name": "import-rigel-running",
+      "phase": "noimage",
+      "condition": "backend com GALAXY_IMAGES_HIPS2FITS_BASEURLS_0/_1=http://127.0.0.1:9/hips2fits (recorte sob demanda falha; SIMBAD/Sesame normais); termo fora do catalogo; polling GET /imports/9",
+      "capturedAt": "2026-10-09T00:16:27.530Z"
+    },
+    {
+      "name": "import-rigel-succeeded",
+      "phase": "noimage",
+      "condition": "backend com GALAXY_IMAGES_HIPS2FITS_BASEURLS_0/_1=http://127.0.0.1:9/hips2fits (recorte sob demanda falha; SIMBAD/Sesame normais); termo fora do catalogo; polling GET /imports/9",
+      "capturedAt": "2026-10-09T00:16:27.530Z"
+    },
+    {
       "name": "import-sgr-a-created",
       "phase": "main",
       "condition": "backend normal (seed Messier carregado); Sgr A* fora do catalogo; POST /imports {\"query\":\"Sgr A*\"}",
@@ -141,51 +159,63 @@
     },
     {
       "name": "object-404",
-      "phase": "main",
-      "condition": "backend normal (seed Messier carregado)",
-      "capturedAt": "2026-10-07T15:42:41.099Z"
+      "phase": "refresh",
+      "condition": "backend normal (seed Messier carregado); refresh apos o comando images",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
     },
     {
       "name": "object-betelgeuse",
-      "phase": "main",
-      "condition": "backend normal (seed Messier carregado); apos import de Betelgeuse",
-      "capturedAt": "2026-10-07T00:17:56.794Z"
+      "phase": "refresh",
+      "condition": "backend normal (seed Messier carregado); apos import de Betelgeuse; refresh apos o comando images",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
     },
     {
       "name": "object-messier-100",
-      "phase": "main",
-      "condition": "backend normal (seed Messier carregado); varredura: primeiro exemplo de distance-mpc",
-      "capturedAt": "2026-10-07T00:17:56.794Z"
+      "phase": "refresh",
+      "condition": "backend normal (seed Messier carregado); varredura: primeiro exemplo de distance-mpc; refresh apos o comando images",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
     },
     {
       "name": "object-messier-103",
-      "phase": "main",
-      "condition": "backend normal (seed Messier carregado); varredura: primeiro exemplo de reference-null",
-      "capturedAt": "2026-10-07T00:17:56.794Z"
+      "phase": "refresh",
+      "condition": "backend normal (seed Messier carregado); varredura: primeiro exemplo de reference-null; refresh apos o comando images",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
     },
     {
       "name": "object-messier-31",
-      "phase": "main",
-      "condition": "backend normal (seed Messier carregado)",
-      "capturedAt": "2026-10-07T00:17:56.794Z"
+      "phase": "refresh",
+      "condition": "backend normal (seed Messier carregado); refresh apos o comando images",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
+    },
+    {
+      "name": "object-messier-51",
+      "phase": "refresh",
+      "condition": "backend normal, comando images (CUTOUT,ESA_HUBBLE,ESA_WEBB) ja rodado; exemplo pedido (M51)",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
+    },
+    {
+      "name": "object-rigel",
+      "phase": "noimage",
+      "condition": "backend com GALAXY_IMAGES_HIPS2FITS_BASEURLS_0/_1=http://127.0.0.1:9/hips2fits (recorte sob demanda falha; SIMBAD/Sesame normais); apos import de Rigel",
+      "capturedAt": "2026-10-09T00:16:27.530Z"
     },
     {
       "name": "object-sgr-a",
-      "phase": "main",
-      "condition": "backend normal (seed Messier carregado); slug lido de GET /search?q=Sgr A*",
-      "capturedAt": "2026-10-07T00:17:56.794Z"
+      "phase": "refresh",
+      "condition": "backend normal (seed Messier carregado); slug lido de GET /search?q=Sgr A*; refresh apos o comando images",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
     },
     {
       "name": "object-vega",
-      "phase": "main",
-      "condition": "backend normal (seed Messier carregado)",
-      "capturedAt": "2026-10-07T00:17:56.794Z"
+      "phase": "refresh",
+      "condition": "backend normal (seed Messier carregado); refresh apos o comando images",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
     },
     {
       "name": "search-400",
-      "phase": "main",
-      "condition": "backend normal (seed Messier carregado); q com 101 caracteres",
-      "capturedAt": "2026-10-07T15:42:41.099Z"
+      "phase": "refresh",
+      "condition": "backend normal (seed Messier carregado); q com 101 caracteres; refresh apos o comando images",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
     },
     {
       "name": "search-empty-betelgeuse",
@@ -195,15 +225,21 @@
     },
     {
       "name": "search-fuzzy",
-      "phase": "main",
-      "condition": "backend normal (seed Messier carregado); grafia errada de Betelgeuse",
-      "capturedAt": "2026-10-07T00:17:56.794Z"
+      "phase": "refresh",
+      "condition": "backend normal (seed Messier carregado); grafia errada de Betelgeuse; refresh apos o comando images",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
     },
     {
       "name": "search-m31",
-      "phase": "main",
-      "condition": "backend normal (seed Messier carregado)",
-      "capturedAt": "2026-10-07T15:42:41.099Z"
+      "phase": "refresh",
+      "condition": "backend normal (seed Messier carregado); refresh apos o comando images",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
+    },
+    {
+      "name": "search-m51",
+      "phase": "refresh",
+      "condition": "backend normal, comando images (CUTOUT,ESA_HUBBLE,ESA_WEBB) ja rodado",
+      "capturedAt": "2026-10-08T23:41:39.115Z"
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import type { CategoryObjectItem } from '../../api/types'
+import { ResultThumbnail } from '../image/ResultThumbnail'
 import styles from './Category.module.css'
 
 export function ObjectList({ items }: { items: CategoryObjectItem[] }) {
@@ -10,6 +11,7 @@ export function ObjectList({ items }: { items: CategoryObjectItem[] }) {
           <Link className={styles.item} to={`/objects/${encodeURIComponent(item.slug)}`}>
             <span className={styles.itemName}>{item.displayName}</span>
             <span className={styles.itemCategory}>{item.categoryName ?? 'Sem categoria'}</span>
+            <ResultThumbnail thumbnail={item.thumbnail} />
           </Link>
         </li>
       ))}

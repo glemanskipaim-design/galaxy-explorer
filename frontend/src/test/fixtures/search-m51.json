@@ -1,0 +1,37 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/search?q=M51",
+    "body": null
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-08T23:41:35.472Z",
+  "body": {
+    "query": "M51",
+    "normalizedQuery": "m51",
+    "hits": [
+      {
+        "slug": "messier-51",
+        "displayName": "M 51",
+        "categoryCode": "galaxy_spiral",
+        "categoryName": "Galáxia espiral",
+        "matchedIdentifier": "M  51",
+        "matchType": "EXACT",
+        "score": 1,
+        "thumbnail": {
+          "url": "/api/v1/images/files/58d6ed17adec695fa73aab5444cc25f9f9e3193d939c353cf2f364647ef8c455.jpg",
+          "width": 320,
+          "height": 222,
+          "kind": "processed_composite",
+          "provider": "ESA/Hubble",
+          "licenseCode": "CC-BY-4.0"
+        }
+      }
+    ]
+  }
+}

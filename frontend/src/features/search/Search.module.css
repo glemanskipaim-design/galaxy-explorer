@@ -83,6 +83,11 @@
   font-size: var(--text-sm);
 }
 
+.hitThumb {
+  grid-column: 1;
+  min-width: 0;
+}
+
 .hitIdent {
   font-family: var(--font-mono);
   color: var(--color-text);
@@ -90,7 +95,7 @@
 
 .hitArrow {
   grid-column: 2;
-  grid-row: 1 / span 2;
+  grid-row: 1 / span 3;
   color: var(--color-text-muted);
   font-size: var(--text-xl);
   transition: transform var(--duration-slow) var(--ease-out);

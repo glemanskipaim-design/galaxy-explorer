@@ -10,7 +10,7 @@
     "location": null,
     "retry-after": null
   },
-  "capturedAt": "2026-10-07T00:17:52.934Z",
+  "capturedAt": "2026-10-08T23:41:34.879Z",
   "body": {
     "category": {
       "code": "galaxy",
@@ -25,145 +25,337 @@
         "slug": "messier-31",
         "displayName": "M 31",
         "categoryCode": "galaxy_spiral",
-        "categoryName": "Galáxia espiral"
+        "categoryName": "Galáxia espiral",
+        "thumbnail": {
+          "url": "/api/v1/images/files/23d443c5c1f172995381056b120d34cc7a423920d52991c90c9279ccb70c4281.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "DSS2 via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       },
       {
         "slug": "messier-32",
         "displayName": "M 32",
         "categoryCode": "galaxy_elliptical",
-        "categoryName": "Galáxia elíptica"
+        "categoryName": "Galáxia elíptica",
+        "thumbnail": {
+          "url": "/api/v1/images/files/d894777c983b87a355475dce278bbfac40b7a2454fc360ea3575a7bf74040e04.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "PanSTARRS via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       },
       {
         "slug": "messier-33",
         "displayName": "M 33",
         "categoryCode": "galaxy_spiral",
-        "categoryName": "Galáxia espiral"
+        "categoryName": "Galáxia espiral",
+        "thumbnail": {
+          "url": "/api/v1/images/files/04feffc9c522eaa662d3f67ee9c2c4aec926b33013761b8ecfc49d8a37df02b3.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "DSS2 via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       },
       {
         "slug": "messier-49",
         "displayName": "M 49",
         "categoryCode": "galaxy_elliptical",
-        "categoryName": "Galáxia elíptica"
+        "categoryName": "Galáxia elíptica",
+        "thumbnail": {
+          "url": "/api/v1/images/files/fe9c7c27324c1226a089b779c54fe6d28d86e908836d509c0ce5c02a13480d95.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "PanSTARRS via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       },
       {
         "slug": "messier-51",
         "displayName": "M 51",
         "categoryCode": "galaxy_spiral",
-        "categoryName": "Galáxia espiral"
+        "categoryName": "Galáxia espiral",
+        "thumbnail": {
+          "url": "/api/v1/images/files/58d6ed17adec695fa73aab5444cc25f9f9e3193d939c353cf2f364647ef8c455.jpg",
+          "width": 320,
+          "height": 222,
+          "kind": "processed_composite",
+          "provider": "ESA/Hubble",
+          "licenseCode": "CC-BY-4.0"
+        }
       },
       {
         "slug": "messier-58",
         "displayName": "M 58",
         "categoryCode": "galaxy_spiral",
-        "categoryName": "Galáxia espiral"
+        "categoryName": "Galáxia espiral",
+        "thumbnail": {
+          "url": "/api/v1/images/files/444b4703ebd92a1f1bd13d715303225edffc44ffc47fdddcadba89821765b2b6.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "PanSTARRS via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       },
       {
         "slug": "messier-59",
         "displayName": "M 59",
         "categoryCode": "galaxy_elliptical",
-        "categoryName": "Galáxia elíptica"
+        "categoryName": "Galáxia elíptica",
+        "thumbnail": {
+          "url": "/api/v1/images/files/a8ae6080ea1c9d63f9db295b44930bde974df5f06a586bf257b4187478f857fa.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "PanSTARRS via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       },
       {
         "slug": "messier-60",
         "displayName": "M 60",
         "categoryCode": "galaxy_lenticular",
-        "categoryName": "Galáxia lenticular"
+        "categoryName": "Galáxia lenticular",
+        "thumbnail": {
+          "url": "/api/v1/images/files/272785ffab38793687fe9a61c09adcb1a21b83db3579efe6525b43619695d416.jpg",
+          "width": 320,
+          "height": 270,
+          "kind": "processed_composite",
+          "provider": "ESA/Hubble",
+          "licenseCode": "CC-BY-4.0"
+        }
       },
       {
         "slug": "messier-61",
         "displayName": "M 61",
         "categoryCode": "galaxy_spiral",
-        "categoryName": "Galáxia espiral"
+        "categoryName": "Galáxia espiral",
+        "thumbnail": {
+          "url": "/api/v1/images/files/66cf92b2fbbcc3fb9d24bd1174e59b750f97e88fc35f29a3cfc402d8a2f8e8d2.jpg",
+          "width": 320,
+          "height": 312,
+          "kind": "processed_composite",
+          "provider": "ESA/Hubble",
+          "licenseCode": "CC-BY-4.0"
+        }
       },
       {
         "slug": "messier-63",
         "displayName": "M 63",
         "categoryCode": "galaxy_spiral",
-        "categoryName": "Galáxia espiral"
+        "categoryName": "Galáxia espiral",
+        "thumbnail": {
+          "url": "/api/v1/images/files/4a279b74473cf6d8854d4ae1455b7aaa3ffab33b5e99906bd5517f9df689209b.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "PanSTARRS via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       },
       {
         "slug": "messier-64",
         "displayName": "M 64",
         "categoryCode": "galaxy_spiral",
-        "categoryName": "Galáxia espiral"
+        "categoryName": "Galáxia espiral",
+        "thumbnail": {
+          "url": "/api/v1/images/files/0c3f84aeb376e51dfb5d4c8a56dbcc5167d55947c80f174f96e7427054307b4e.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "PanSTARRS via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       },
       {
         "slug": "messier-65",
         "displayName": "M 65",
         "categoryCode": "galaxy_spiral",
-        "categoryName": "Galáxia espiral"
+        "categoryName": "Galáxia espiral",
+        "thumbnail": {
+          "url": "/api/v1/images/files/a9c2fc5076110bb8b74f7c1ed47a4841c6a125bbcd1a4b3eb334cb5a0a8e88b6.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "PanSTARRS via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       },
       {
         "slug": "messier-66",
         "displayName": "M 66",
         "categoryCode": "galaxy_spiral",
-        "categoryName": "Galáxia espiral"
+        "categoryName": "Galáxia espiral",
+        "thumbnail": {
+          "url": "/api/v1/images/files/fe85f0b00a32c9d8e8626bf0a0a0af8b0184651c017d6e3cf00b334fe2b411f9.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "PanSTARRS via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       },
       {
         "slug": "messier-74",
         "displayName": "M 74",
         "categoryCode": "galaxy_spiral",
-        "categoryName": "Galáxia espiral"
+        "categoryName": "Galáxia espiral",
+        "thumbnail": {
+          "url": "/api/v1/images/files/679529e4f92052ef5e2983a29ae1a95498f4cd2641c5f4a36773f56bfa49bf98.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "PanSTARRS via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       },
       {
         "slug": "messier-77",
         "displayName": "M 77",
         "categoryCode": "galaxy_spiral",
-        "categoryName": "Galáxia espiral"
+        "categoryName": "Galáxia espiral",
+        "thumbnail": {
+          "url": "/api/v1/images/files/e6cf9e266f8b1b50c4674e51742c9028afc626752f95ff8b17ddebe84c9c1cc9.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "PanSTARRS via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       },
       {
         "slug": "messier-81",
         "displayName": "M 81",
         "categoryCode": "galaxy_spiral",
-        "categoryName": "Galáxia espiral"
+        "categoryName": "Galáxia espiral",
+        "thumbnail": {
+          "url": "/api/v1/images/files/84a0b3b4e1cc86eaf2e43d3b461b20ab898709115d5eb28e11f7b9c793b2b6cc.jpg",
+          "width": 247,
+          "height": 320,
+          "kind": "processed_composite",
+          "provider": "ESA/Hubble",
+          "licenseCode": "CC-BY-4.0"
+        }
       },
       {
         "slug": "messier-82",
         "displayName": "M 82",
         "categoryCode": "galaxy_spiral",
-        "categoryName": "Galáxia espiral"
+        "categoryName": "Galáxia espiral",
+        "thumbnail": {
+          "url": "/api/v1/images/files/9ce5d3e9cc834f825b8320d4d2d993b5f96453b872ca802974733c57b1a1a81d.jpg",
+          "width": 320,
+          "height": 216,
+          "kind": "processed_composite",
+          "provider": "ESA/Webb",
+          "licenseCode": "CC-BY-4.0"
+        }
       },
       {
         "slug": "messier-83",
         "displayName": "M 83",
         "categoryCode": "galaxy_spiral",
-        "categoryName": "Galáxia espiral"
+        "categoryName": "Galáxia espiral",
+        "thumbnail": {
+          "url": "/api/v1/images/files/d09a8554262d56bb4d22c16e439c1b8bc935f26589f7cb70718b1590d8fc2bd4.jpg",
+          "width": 320,
+          "height": 320,
+          "kind": "processed_composite",
+          "provider": "ESA/Hubble",
+          "licenseCode": "CC-BY-4.0"
+        }
       },
       {
         "slug": "messier-84",
         "displayName": "M 84",
         "categoryCode": "galaxy_elliptical",
-        "categoryName": "Galáxia elíptica"
+        "categoryName": "Galáxia elíptica",
+        "thumbnail": {
+          "url": "/api/v1/images/files/38301c44ed6f195a27be4e088949b29cb56e74fecd5e60546fe037d9b3641a39.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "PanSTARRS via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       },
       {
         "slug": "messier-85",
         "displayName": "M 85",
         "categoryCode": "galaxy_lenticular",
-        "categoryName": "Galáxia lenticular"
+        "categoryName": "Galáxia lenticular",
+        "thumbnail": {
+          "url": "/api/v1/images/files/8afae6f7b2995f4438e954386463d5b0698d8e98ae994b4154ace81763fb462b.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "PanSTARRS via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       },
       {
         "slug": "messier-86",
         "displayName": "M 86",
         "categoryCode": "galaxy_elliptical",
-        "categoryName": "Galáxia elíptica"
+        "categoryName": "Galáxia elíptica",
+        "thumbnail": {
+          "url": "/api/v1/images/files/a6c907b63e35e2913e16aa35a61fd09ae0a066f5cf30f6a91d4ba3590bc5a58a.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "PanSTARRS via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       },
       {
         "slug": "messier-87",
         "displayName": "M 87",
         "categoryCode": "galaxy_elliptical",
-        "categoryName": "Galáxia elíptica"
+        "categoryName": "Galáxia elíptica",
+        "thumbnail": {
+          "url": "/api/v1/images/files/e52b8c8a861b17f67a39168e35e3bf6672b6c2c0393159de06e669f077fd4123.jpg",
+          "width": 320,
+          "height": 310,
+          "kind": "processed_composite",
+          "provider": "ESA/Hubble",
+          "licenseCode": "CC-BY-4.0"
+        }
       },
       {
         "slug": "messier-88",
         "displayName": "M 88",
         "categoryCode": "galaxy_spiral",
-        "categoryName": "Galáxia espiral"
+        "categoryName": "Galáxia espiral",
+        "thumbnail": {
+          "url": "/api/v1/images/files/e83805b94392d2e793b0091cf2f5b2d2ac18ee097ffb02d539f4772b2adde26c.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "PanSTARRS via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       },
       {
         "slug": "messier-89",
         "displayName": "M 89",
         "categoryCode": "galaxy_lenticular",
-        "categoryName": "Galáxia lenticular"
+        "categoryName": "Galáxia lenticular",
+        "thumbnail": {
+          "url": "/api/v1/images/files/da88731c2b8884bb8da7c65789595d52a1cc36748d9b7021bb7c6e2a484c660e.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "PanSTARRS via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       }
     ]
   }

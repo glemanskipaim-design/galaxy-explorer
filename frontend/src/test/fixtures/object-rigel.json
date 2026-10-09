@@ -1,0 +1,859 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/objects/rigel",
+    "body": null
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-09T00:16:27.527Z",
+  "body": {
+    "slug": "rigel",
+    "displayName": "Rigel",
+    "category": {
+      "code": "star_supergiant",
+      "namePt": "Estrela supergigante",
+      "nameEn": "Supergiant star",
+      "basis": "SIMBAD otype=s*b -> star_supergiant (regra generica do otype, prioridade 0)"
+    },
+    "existenceStatus": "confirmed",
+    "sourceTypes": [
+      {
+        "source": "SIMBAD",
+        "sourceRef": "771345",
+        "sourceType": "s*b",
+        "morphType": null
+      }
+    ],
+    "identifiers": [
+      {
+        "identifier": "NAME Rigel",
+        "catalog": "NAME",
+        "isCommonName": true,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "*  19 Ori",
+        "catalog": "*",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "1RXS J051431.5-081112",
+        "catalog": "1RXS",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "2E 0512.1-0814",
+        "catalog": "2E",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "2E  1238",
+        "catalog": "2E",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "2MASS J05143226-0812060",
+        "catalog": "2MASS",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "AAVSO 0509-08",
+        "catalog": "AAVSO",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "ADS  3823 A",
+        "catalog": "ADS",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "ALS 14772",
+        "catalog": "ALS",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "BD-08  1063",
+        "catalog": "BD-08",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "* bet Ori",
+        "catalog": "*",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "* bet Ori A",
+        "catalog": "*",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "CCDM J05145-0812A",
+        "catalog": "CCDM",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "CEL    579",
+        "catalog": "CEL",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "CSI-08  1063  1",
+        "catalog": "CSI-08",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "CSV 100463",
+        "catalog": "CSV",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "EM* MWC  487",
+        "catalog": "EM*",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "EUVE J0514-08.1",
+        "catalog": "EUVE",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "FK5  194",
+        "catalog": "FK5",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "GC  6410",
+        "catalog": "GC",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "GCRV  3110",
+        "catalog": "GCRV",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "GN 05.04.0",
+        "catalog": "GN",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "GSC 05331-01752",
+        "catalog": "GSC",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "HD  34085",
+        "catalog": "HD",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "HGAM    376",
+        "catalog": "HGAM",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "HIC  24436",
+        "catalog": "HIC",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "HIP 24436",
+        "catalog": "HIP",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "HR  1713",
+        "catalog": "HR",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "IDS 05097-0819 A",
+        "catalog": "IDS",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "IRAS 05121-0815",
+        "catalog": "IRAS",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "IRC -10085",
+        "catalog": "IRC",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "JP11  1014",
+        "catalog": "JP11",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "MCW  291",
+        "catalog": "MCW",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "N30 1120",
+        "catalog": "N30",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "NSV  1882",
+        "catalog": "NSV",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "PLX 1191",
+        "catalog": "PLX",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "PLX 1191.00",
+        "catalog": "PLX",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "PMC 90-93   140",
+        "catalog": "PMC",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "PMSC 05097-0819A",
+        "catalog": "PMSC",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "PPM 187839",
+        "catalog": "PPM",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "RAFGL  710",
+        "catalog": "RAFGL",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "ROT   749",
+        "catalog": "ROT",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "SACS 113",
+        "catalog": "SACS",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "SAO 131907",
+        "catalog": "SAO",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "[SC93b] 101",
+        "catalog": "[SC93b]",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "SKY#  8263",
+        "catalog": "SKY#",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "SV* ZI   362",
+        "catalog": "SV*",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "TD1  4253",
+        "catalog": "TD1",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "TIC 231308237",
+        "catalog": "TIC",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "TYC 5331-1752-1",
+        "catalog": "TYC",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "UBV    5016",
+        "catalog": "UBV",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "UBV M  10750",
+        "catalog": "UBV",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "uvby98 100034085",
+        "catalog": "uvby98",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "VDB  36",
+        "catalog": "VDB",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "WDS J05145-0812A",
+        "catalog": "WDS",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      },
+      {
+        "identifier": "WEB  4731",
+        "catalog": "WEB",
+        "isCommonName": false,
+        "source": "SIMBAD"
+      }
+    ],
+    "position": {
+      "raDeg": 78.63446706693006,
+      "decDeg": -8.201638364722209,
+      "frame": "ICRS",
+      "epoch": "J2000",
+      "source": "SIMBAD",
+      "reference": {
+        "bibcode": "2007A&A...474..653V",
+        "adsUrl": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract"
+      },
+      "retrievedAt": "2026-10-09T00:16:22.223888Z"
+    },
+    "properties": [
+      {
+        "code": "distance",
+        "label": "Distância",
+        "group": "astrometry",
+        "qualifier": "",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 5689,
+          "value": 264.55026455026456,
+          "errMinus": 21.831817948322822,
+          "errPlus": 26.147409868340105,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "pc",
+          "originalValue": "264.55026455026456",
+          "originalUnit": "pc",
+          "originalError": null,
+          "epistemic": "computed_by_us",
+          "method": "1/plx",
+          "derivedFrom": [
+            5677
+          ],
+          "source": "SIMBAD",
+          "dataset": "computed:inverse_parallax",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20bet%20Ori",
+          "reference": {
+            "bibcode": "2007A&A...474..653V",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract"
+          },
+          "retrievedAt": "2026-10-09T00:16:22.223888Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "parallax",
+        "label": "Paralaxe",
+        "group": "astrometry",
+        "qualifier": "",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 5677,
+          "value": 3.78,
+          "errMinus": 0.34,
+          "errPlus": 0.34,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "mas",
+          "originalValue": "3.78",
+          "originalUnit": "mas",
+          "originalError": "0.34",
+          "epistemic": "observed",
+          "method": null,
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "basic",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20bet%20Ori",
+          "reference": {
+            "bibcode": "2007A&A...474..653V",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract"
+          },
+          "retrievedAt": "2026-10-09T00:16:22.223888Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "morph_type",
+        "label": "Tipo morfológico",
+        "group": "classification",
+        "qualifier": "",
+        "available": false,
+        "absence": {
+          "code": "NOT_PROVIDED_BY_SOURCE",
+          "message": "Não disponível na fonte",
+          "snr": null
+        },
+        "preferred": null,
+        "alternatives": []
+      },
+      {
+        "code": "spectral_type",
+        "label": "Tipo espectral",
+        "group": "classification",
+        "qualifier": "",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 5680,
+          "value": null,
+          "errMinus": null,
+          "errPlus": null,
+          "limitFlag": null,
+          "valueText": "B8Ia",
+          "unit": null,
+          "originalValue": "B8Ia",
+          "originalUnit": null,
+          "originalError": null,
+          "epistemic": "observed",
+          "method": null,
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "basic",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20bet%20Ori",
+          "reference": {
+            "bibcode": "2024A&A...690A.176N",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2024A%26A...690A.176N/abstract"
+          },
+          "retrievedAt": "2026-10-09T00:16:22.223888Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "radial_velocity",
+        "label": "Velocidade radial",
+        "group": "kinematics",
+        "qualifier": "",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 5679,
+          "value": 17.8,
+          "errMinus": 0.4,
+          "errPlus": 0.4,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "km/s",
+          "originalValue": "17.8",
+          "originalUnit": "km.s-1",
+          "originalError": "0.4",
+          "epistemic": "observed",
+          "method": "SIMBAD rvz_type=v",
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "basic",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20bet%20Ori",
+          "reference": {
+            "bibcode": "2006AstL...32..759G",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2006AstL...32..759G/abstract"
+          },
+          "retrievedAt": "2026-10-09T00:16:22.223888Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "redshift",
+        "label": "Redshift (z)",
+        "group": "kinematics",
+        "qualifier": "",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 5678,
+          "value": 0.000059376171710257,
+          "errMinus": null,
+          "errPlus": null,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": null,
+          "originalValue": "5.9376171710257E-5",
+          "originalUnit": null,
+          "originalError": null,
+          "epistemic": "derived_by_source",
+          "method": "SIMBAD rvz_type=v",
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "basic",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20bet%20Ori",
+          "reference": {
+            "bibcode": "2006AstL...32..759G",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2006AstL...32..759G/abstract"
+          },
+          "retrievedAt": "2026-10-09T00:16:22.223888Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "ang_size_major",
+        "label": "Tamanho angular (eixo maior)",
+        "group": "morphology",
+        "qualifier": "",
+        "available": false,
+        "absence": {
+          "code": "NOT_PROVIDED_BY_SOURCE",
+          "message": "Não disponível na fonte",
+          "snr": null
+        },
+        "preferred": null,
+        "alternatives": []
+      },
+      {
+        "code": "ang_size_minor",
+        "label": "Tamanho angular (eixo menor)",
+        "group": "morphology",
+        "qualifier": "",
+        "available": false,
+        "absence": {
+          "code": "NOT_PROVIDED_BY_SOURCE",
+          "message": "Não disponível na fonte",
+          "snr": null
+        },
+        "preferred": null,
+        "alternatives": []
+      },
+      {
+        "code": "app_mag",
+        "label": "Magnitude aparente",
+        "group": "photometry",
+        "qualifier": "B",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 5681,
+          "value": 0.1,
+          "errMinus": null,
+          "errPlus": null,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "mag",
+          "originalValue": "0.1",
+          "originalUnit": null,
+          "originalError": null,
+          "epistemic": "observed",
+          "method": null,
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "flux",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20bet%20Ori",
+          "reference": {
+            "bibcode": "2002yCat.2237....0D",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2002yCat.2237....0D/abstract"
+          },
+          "retrievedAt": "2026-10-09T00:16:25.307237Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "app_mag",
+        "label": "Magnitude aparente",
+        "group": "photometry",
+        "qualifier": "H",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 5682,
+          "value": 0.2,
+          "errMinus": null,
+          "errPlus": null,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "mag",
+          "originalValue": "0.2",
+          "originalUnit": null,
+          "originalError": null,
+          "epistemic": "observed",
+          "method": null,
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "flux",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20bet%20Ori",
+          "reference": {
+            "bibcode": "2002yCat.2237....0D",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2002yCat.2237....0D/abstract"
+          },
+          "retrievedAt": "2026-10-09T00:16:25.307237Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "app_mag",
+        "label": "Magnitude aparente",
+        "group": "photometry",
+        "qualifier": "I",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 5683,
+          "value": 0.15,
+          "errMinus": null,
+          "errPlus": null,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "mag",
+          "originalValue": "0.15",
+          "originalUnit": null,
+          "originalError": null,
+          "epistemic": "observed",
+          "method": null,
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "flux",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20bet%20Ori",
+          "reference": {
+            "bibcode": "2002yCat.2237....0D",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2002yCat.2237....0D/abstract"
+          },
+          "retrievedAt": "2026-10-09T00:16:25.307237Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "app_mag",
+        "label": "Magnitude aparente",
+        "group": "photometry",
+        "qualifier": "J",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 5684,
+          "value": 0.22,
+          "errMinus": null,
+          "errPlus": null,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "mag",
+          "originalValue": "0.22",
+          "originalUnit": null,
+          "originalError": null,
+          "epistemic": "observed",
+          "method": null,
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "flux",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20bet%20Ori",
+          "reference": {
+            "bibcode": "2002yCat.2237....0D",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2002yCat.2237....0D/abstract"
+          },
+          "retrievedAt": "2026-10-09T00:16:25.307237Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "app_mag",
+        "label": "Magnitude aparente",
+        "group": "photometry",
+        "qualifier": "K",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 5685,
+          "value": 0.18,
+          "errMinus": null,
+          "errPlus": null,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "mag",
+          "originalValue": "0.18",
+          "originalUnit": null,
+          "originalError": null,
+          "epistemic": "observed",
+          "method": null,
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "flux",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20bet%20Ori",
+          "reference": {
+            "bibcode": "2002yCat.2237....0D",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2002yCat.2237....0D/abstract"
+          },
+          "retrievedAt": "2026-10-09T00:16:25.307237Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "app_mag",
+        "label": "Magnitude aparente",
+        "group": "photometry",
+        "qualifier": "R",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 5686,
+          "value": 0.13,
+          "errMinus": null,
+          "errPlus": null,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "mag",
+          "originalValue": "0.13",
+          "originalUnit": null,
+          "originalError": null,
+          "epistemic": "observed",
+          "method": null,
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "flux",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20bet%20Ori",
+          "reference": {
+            "bibcode": "2002yCat.2237....0D",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2002yCat.2237....0D/abstract"
+          },
+          "retrievedAt": "2026-10-09T00:16:25.307237Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "app_mag",
+        "label": "Magnitude aparente",
+        "group": "photometry",
+        "qualifier": "U",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 5687,
+          "value": -0.56,
+          "errMinus": null,
+          "errPlus": null,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "mag",
+          "originalValue": "-0.56",
+          "originalUnit": null,
+          "originalError": null,
+          "epistemic": "observed",
+          "method": null,
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "flux",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20bet%20Ori",
+          "reference": {
+            "bibcode": "2002yCat.2237....0D",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2002yCat.2237....0D/abstract"
+          },
+          "retrievedAt": "2026-10-09T00:16:25.307237Z"
+        },
+        "alternatives": []
+      },
+      {
+        "code": "app_mag",
+        "label": "Magnitude aparente",
+        "group": "photometry",
+        "qualifier": "V",
+        "available": true,
+        "absence": null,
+        "preferred": {
+          "id": 5688,
+          "value": 0.13,
+          "errMinus": null,
+          "errPlus": null,
+          "limitFlag": null,
+          "valueText": null,
+          "unit": "mag",
+          "originalValue": "0.13",
+          "originalUnit": null,
+          "originalError": null,
+          "epistemic": "observed",
+          "method": null,
+          "derivedFrom": [],
+          "source": "SIMBAD",
+          "dataset": "flux",
+          "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20bet%20Ori",
+          "reference": {
+            "bibcode": "2002yCat.2237....0D",
+            "adsUrl": "https://ui.adsabs.harvard.edu/abs/2002yCat.2237....0D/abstract"
+          },
+          "retrievedAt": "2026-10-09T00:16:25.307237Z"
+        },
+        "alternatives": []
+      }
+    ],
+    "sources": [
+      {
+        "code": "SIMBAD",
+        "name": "SIMBAD Astronomical Database (CDS, Strasbourg)",
+        "homepageUrl": "https://simbad.cds.unistra.fr/simbad/",
+        "termsUrl": "https://cds.unistra.fr/legals/",
+        "acknowledgment": "This research has made use of the SIMBAD database, operated at CDS, Strasbourg, France\n2000,A&AS,143,9, \"The SIMBAD astronomical database\", Wenger et al."
+      }
+    ],
+    "images": [],
+    "imageAbsence": {
+      "code": "NOT_AVAILABLE",
+      "message": "Imagem não disponível: nenhuma imagem com crédito e licença verificados foi obtida para este objeto"
+    }
+  }
+}

@@ -16,6 +16,8 @@ export interface SearchHit {
   matchedIdentifier: string
   matchType: MatchType
   score: number
+  /** miniatura do hero; null = objeto sem imagem */
+  thumbnail: ImageThumbnail | null
 }
 
 /** api/search/SearchResponse.java */
@@ -168,6 +170,10 @@ export interface ObjectDetail {
   position: Position | null
   properties: Property[]
   sources: Source[]
+  /** hero primeiro, depois a galeria; [] quando nao ha */
+  images: ObjectImage[]
+  /** nao-null se e somente se images = [] */
+  imageAbsence: ImageAbsence | null
 }
 
 /** api/error/ApiErrorCode.java */
@@ -177,6 +183,7 @@ export type ApiErrorCode =
   | 'IMPORT_NOT_FOUND'
   | 'IMPORT_QUEUE_FULL'
   | 'CATEGORY_NOT_FOUND'
+  | 'IMAGE_NOT_FOUND'
   | 'INTERNAL_ERROR'
   | (string & {})
 
@@ -213,6 +220,7 @@ export interface CategoryObjectItem {
   displayName: string
   categoryCode: string | null
   categoryName: string | null
+  thumbnail: ImageThumbnail | null
 }
 
 /** api/category/CategoryObjectsResponse.java */
@@ -222,4 +230,80 @@ export interface CategoryObjectsResponse {
   limit: number
   offset: number
   items: CategoryObjectItem[]
+}
+
+/** catalog/image/ImageKind.java (dbValue()) */
+export type ImageKind =
+  | 'observation'
+  | 'survey_cutout'
+  | 'processed_composite'
+  | 'artist_impression'
+  | 'diagram'
+  | (string & {})
+
+/** api/image/ThumbnailDto.java — `provider` e o nome CURTO ("ESA/Hubble", "DSS2 via CDS") */
+export interface ImageThumbnail {
+  url: string
+  width: number
+  height: number
+  kind: ImageKind
+  provider: string
+  licenseCode: string
+}
+
+/** ObjectDetailResponse.ImageAbsence (catalog/read/ImageAbsenceReason.java) */
+export interface ImageAbsence {
+  code: 'NO_POSITION' | 'NOT_AVAILABLE' | (string & {})
+  message: string
+}
+
+/** ImageDto.License */
+export interface ImageLicense {
+  code: string
+  name: string
+  url: string
+}
+
+/** ImageDto.Cutout */
+export interface CutoutInfo {
+  survey: string | null
+  hipsId: string
+  fovDeg: number | null
+  fovBasis: string | null
+  centerRaDeg: number | null
+  centerDecDeg: number | null
+}
+
+/** api/image/ImageDto.java */
+export interface ObjectImage {
+  id: number
+  kind: ImageKind
+  hero: boolean
+  /** relativa, mesma origem: /api/v1/images/files/<sha>.jpg */
+  url: string
+  width: number
+  height: number
+  thumbnail: { url: string; width: number; height: number }
+  title: string | null
+  provider: string
+  providerShort: string
+  source: string
+  /** credito LITERAL da fonte */
+  credit: string
+  acknowledgment: string | null
+  license: ImageLicense
+  rightsText: string
+  termsUrl: string | null
+  mission: string | null
+  instrument: string | null
+  wavelength: string | null
+  pageUrl: string
+  sourceImageId: string
+  /** data de PUBLICACAO (ISO yyyy-mm-dd) */
+  releaseDate: string | null
+  cutout: CutoutInfo | null
+  coverageRatio: number | null
+  matchBasis: string
+  curatedBy: 'automatic' | 'manual' | (string & {})
+  retrievedAt: string
 }

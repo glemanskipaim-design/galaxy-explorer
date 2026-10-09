@@ -10,7 +10,7 @@
     "location": null,
     "retry-after": null
   },
-  "capturedAt": "2026-10-07T15:42:40.859Z",
+  "capturedAt": "2026-10-08T23:41:35.382Z",
   "body": {
     "query": "M31",
     "normalizedQuery": "m31",
@@ -22,7 +22,15 @@
         "categoryName": "Galáxia espiral",
         "matchedIdentifier": "M  31",
         "matchType": "EXACT",
-        "score": 1
+        "score": 1,
+        "thumbnail": {
+          "url": "/api/v1/images/files/23d443c5c1f172995381056b120d34cc7a423920d52991c90c9279ccb70c4281.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "DSS2 via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       }
     ]
   }

@@ -38,12 +38,15 @@ import objectBetelgeuseJson from './object-betelgeuse.json'
 import objectM100Json from './object-messier-100.json'
 import objectM103Json from './object-messier-103.json'
 import objectM31Json from './object-messier-31.json'
+import objectM51Json from './object-messier-51.json'
+import objectRigelJson from './object-rigel.json'
 import objectSgrAJson from './object-sgr-a.json'
 import objectVegaJson from './object-vega.json'
 import search400Json from './search-400.json'
 import searchEmptyJson from './search-empty-betelgeuse.json'
 import searchFuzzyJson from './search-fuzzy.json'
 import searchM31Json from './search-m31.json'
+import searchM51Json from './search-m51.json'
 
 /** Envelope gravado pelo script de captura. `body` e exatamente o que a API devolveu. */
 export interface Fixture<T> {
@@ -60,6 +63,7 @@ export interface Fixture<T> {
 
 // Busca
 export const searchM31: Fixture<SearchResponse> = searchM31Json
+export const searchM51: Fixture<SearchResponse> = searchM51Json
 export const searchFuzzy: Fixture<SearchResponse> = searchFuzzyJson
 export const searchEmpty: Fixture<SearchResponse> = searchEmptyJson
 export const search400: Fixture<ApiErrorBody> = search400Json
@@ -74,8 +78,10 @@ export const category400: Fixture<ApiErrorBody> = category400Json
 
 // Objetos
 export const objectM31: Fixture<ObjectDetail> = objectM31Json
+export const objectM51: Fixture<ObjectDetail> = objectM51Json
 export const objectBetelgeuse: Fixture<ObjectDetail> = objectBetelgeuseJson
 export const objectVega: Fixture<ObjectDetail> = objectVegaJson
+export const objectRigel: Fixture<ObjectDetail> = objectRigelJson
 export const objectSgrA: Fixture<ObjectDetail> = objectSgrAJson
 export const objectM100: Fixture<ObjectDetail> = objectM100Json
 export const objectM103: Fixture<ObjectDetail> = objectM103Json
@@ -102,8 +108,22 @@ export const import429: Fixture<ApiErrorBody> = import429Json
 
 /** Todos os objetos capturados, por slug (para o handler de /objects/:slug). */
 export const objectsBySlug: ReadonlyMap<string, Fixture<ObjectDetail>> = new Map(
-  [objectM31, objectBetelgeuse, objectVega, objectSgrA, objectM100, objectM103].map((f) => [
+  [objectM31, objectM51, objectRigel, objectBetelgeuse, objectVega, objectSgrA, objectM100, objectM103].map((f) => [
     f.body.slug,
     f,
   ]),
 )
+
+/**
+ * Exemplos reais de estados de imagem, conforme a varredura do coverage.md (fase refresh).
+ * NO_POSITION nao tem exemplo real (gap no coverage.md). NOT_AVAILABLE: Rigel importado com o
+ * hips2fits apontando para porta sem servico (fase noimage do script de captura).
+ */
+export const imageExamples = {
+  /** "Só recorte de survey" */
+  cutoutOnly: objectBetelgeuse,
+  /** "Hero = recorte, ESA nas extras (objeto grande)" */
+  cutoutHeroWithExtras: objectM100,
+  /** "Sem imagem: NOT_AVAILABLE" */
+  absent: objectRigel,
+} as const

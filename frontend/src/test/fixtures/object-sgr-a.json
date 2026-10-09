@@ -10,7 +10,7 @@
     "location": null,
     "retry-after": null
   },
-  "capturedAt": "2026-10-07T00:17:52.833Z",
+  "capturedAt": "2026-10-08T23:41:35.234Z",
   "body": {
     "slug": "sgr-a",
     "displayName": "Sgr A*",
@@ -251,12 +251,66 @@
     ],
     "sources": [
       {
+        "code": "CDS_HIPS2FITS",
+        "name": "CDS hips2fits",
+        "homepageUrl": "https://alasky.cds.unistra.fr/hips-image-services/hips2fits",
+        "termsUrl": "https://cds.unistra.fr/legals/",
+        "acknowledgment": "This research made use of hips2fits, a service provided by CDS."
+      },
+      {
         "code": "SIMBAD",
         "name": "SIMBAD Astronomical Database (CDS, Strasbourg)",
         "homepageUrl": "https://simbad.cds.unistra.fr/simbad/",
         "termsUrl": "https://cds.unistra.fr/legals/",
         "acknowledgment": "This research has made use of the SIMBAD database, operated at CDS, Strasbourg, France\n2000,A&AS,143,9, \"The SIMBAD astronomical database\", Wenger et al."
       }
-    ]
+    ],
+    "images": [
+      {
+        "id": 124,
+        "kind": "survey_cutout",
+        "hero": true,
+        "url": "/api/v1/images/files/424e8b7c291a9788feb1f04292fbd53510d7f360392a2a88f83768df57fe79c6.jpg",
+        "width": 800,
+        "height": 600,
+        "thumbnail": {
+          "url": "/api/v1/images/files/8587798bcf58419d0c56df5aec803bb895cef5cb74bf6064d41361aebb9f2455.jpg",
+          "width": 320,
+          "height": 240
+        },
+        "title": "PanSTARRS DR1 color (from bands z and g)",
+        "provider": "CDS hips2fits (PanSTARRS DR1 color (from bands z and g))",
+        "providerShort": "PanSTARRS via CDS",
+        "source": "CDS_HIPS2FITS",
+        "credit": "PS1 Science Consortium",
+        "acknowledgment": "This research made use of hips2fits, a service provided by CDS.",
+        "license": {
+          "code": "ODbL-1.0",
+          "name": "Open Data Commons Open Database License (ODbL) v1.0",
+          "url": "https://opendatacommons.org/licenses/odbl/1-0/"
+        },
+        "rightsText": "HiPS © CNRS/Unistra — ODbL-1.0",
+        "termsUrl": "http://panstarrs.stsci.edu/",
+        "mission": "PanSTARRS DR1 color (from bands z and g)",
+        "instrument": null,
+        "wavelength": null,
+        "pageUrl": "https://alasky.cds.unistra.fr/hips-image-services/hips2fits?hips=CDS%2FP%2FPanSTARRS%2FDR1%2Fcolor-z-zg-g&ra=266.416817&dec=-29.007825&fov=0.25&width=800&height=600&projection=TAN&format=jpg",
+        "sourceImageId": "CDS/P/PanSTARRS/DR1/color-z-zg-g",
+        "releaseDate": null,
+        "cutout": {
+          "survey": "PanSTARRS DR1 color (from bands z and g)",
+          "hipsId": "CDS/P/PanSTARRS/DR1/color-z-zg-g",
+          "fovDeg": 0.25,
+          "fovBasis": "padrão 0,25°: objeto sem tamanho angular no catálogo",
+          "centerRaDeg": 266.41681662499997,
+          "centerDecDeg": -29.00782497222222
+        },
+        "coverageRatio": null,
+        "matchBasis": "recorte centrado na posição preferida do objeto (SIMBAD)",
+        "curatedBy": "automatic",
+        "retrievedAt": "2026-10-08T23:21:54.204563Z"
+      }
+    ],
+    "imageAbsence": null
   }
 }

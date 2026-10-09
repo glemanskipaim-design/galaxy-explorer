@@ -199,66 +199,6 @@ a.categoryPill:hover {
   overflow-wrap: anywhere;
 }
 
-/* ── Imagem (placeholder honesto) ─────────────────────────────────── */
-.imagePlaceholder {
-  margin: 0;
-  position: relative;
-  aspect-ratio: 4 / 3;
-  display: grid;
-  place-items: end start;
-  padding: var(--space-5);
-  border: 1px dashed var(--color-border-strong);
-  border-radius: var(--radius-lg);
-  background:
-    repeating-linear-gradient(135deg, rgba(148, 163, 255, 0.04) 0 2px, transparent 2px 14px),
-    var(--color-surface);
-  overflow: hidden;
-}
-
-.rings {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-}
-
-.rings span {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(148, 163, 255, 0.16);
-}
-
-.rings span:nth-child(1) {
-  width: 30%;
-  aspect-ratio: 1;
-}
-
-.rings span:nth-child(2) {
-  width: 55%;
-  aspect-ratio: 1;
-  border-style: dashed;
-}
-
-.rings span:nth-child(3) {
-  width: 80%;
-  aspect-ratio: 1;
-}
-
-.imagePlaceholder figcaption {
-  position: relative;
-  display: grid;
-  gap: var(--space-1);
-  max-width: 26rem;
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-}
-
-.imagePlaceholder strong {
-  color: var(--color-text);
-  font-family: var(--font-display);
-  font-size: var(--text-lg);
-}
-
 /* ── Cartoes ──────────────────────────────────────────────────────── */
 .cards {
   display: grid;

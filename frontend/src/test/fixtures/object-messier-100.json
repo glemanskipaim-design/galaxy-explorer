@@ -10,7 +10,7 @@
     "location": null,
     "retry-after": null
   },
-  "capturedAt": "2026-10-07T00:17:53.473Z",
+  "capturedAt": "2026-10-08T23:41:35.095Z",
   "body": {
     "slug": "messier-100",
     "displayName": "M 100",
@@ -1228,12 +1228,184 @@
     ],
     "sources": [
       {
+        "code": "CDS_HIPS2FITS",
+        "name": "CDS hips2fits",
+        "homepageUrl": "https://alasky.cds.unistra.fr/hips-image-services/hips2fits",
+        "termsUrl": "https://cds.unistra.fr/legals/",
+        "acknowledgment": "This research made use of hips2fits, a service provided by CDS."
+      },
+      {
+        "code": "ESA_HUBBLE",
+        "name": "ESA/Hubble",
+        "homepageUrl": "https://esahubble.org/",
+        "termsUrl": "https://esahubble.org/copyright/",
+        "acknowledgment": null
+      },
+      {
         "code": "SIMBAD",
         "name": "SIMBAD Astronomical Database (CDS, Strasbourg)",
         "homepageUrl": "https://simbad.cds.unistra.fr/simbad/",
         "termsUrl": "https://cds.unistra.fr/legals/",
         "acknowledgment": "This research has made use of the SIMBAD database, operated at CDS, Strasbourg, France\n2000,A&AS,143,9, \"The SIMBAD astronomical database\", Wenger et al."
       }
-    ]
+    ],
+    "images": [
+      {
+        "id": 112,
+        "kind": "survey_cutout",
+        "hero": true,
+        "url": "/api/v1/images/files/fb6392659b77617bbdf600165e6c11260de2a80105f216733ed0cedeeb26b033.jpg",
+        "width": 800,
+        "height": 600,
+        "thumbnail": {
+          "url": "/api/v1/images/files/d38d016235533188e6089fb3e440dd74f472e69f7d1573cf743025994a77732b.jpg",
+          "width": 320,
+          "height": 240
+        },
+        "title": "PanSTARRS DR1 color (from bands z and g)",
+        "provider": "CDS hips2fits (PanSTARRS DR1 color (from bands z and g))",
+        "providerShort": "PanSTARRS via CDS",
+        "source": "CDS_HIPS2FITS",
+        "credit": "PS1 Science Consortium",
+        "acknowledgment": "This research made use of hips2fits, a service provided by CDS.",
+        "license": {
+          "code": "ODbL-1.0",
+          "name": "Open Data Commons Open Database License (ODbL) v1.0",
+          "url": "https://opendatacommons.org/licenses/odbl/1-0/"
+        },
+        "rightsText": "HiPS © CNRS/Unistra — ODbL-1.0",
+        "termsUrl": "http://panstarrs.stsci.edu/",
+        "mission": "PanSTARRS DR1 color (from bands z and g)",
+        "instrument": null,
+        "wavelength": null,
+        "pageUrl": "https://alasky.cds.unistra.fr/hips-image-services/hips2fits?hips=CDS%2FP%2FPanSTARRS%2FDR1%2Fcolor-z-zg-g&ra=185.728875&dec=15.822305&fov=0.131361&width=800&height=600&projection=TAN&format=jpg",
+        "sourceImageId": "CDS/P/PanSTARRS/DR1/color-z-zg-g",
+        "releaseDate": null,
+        "cutout": {
+          "survey": "PanSTARRS DR1 color (from bands z and g)",
+          "hipsId": "CDS/P/PanSTARRS/DR1/color-z-zg-g",
+          "fovDeg": 0.13136125,
+          "fovBasis": "1,25 × tamanho angular (SIMBAD ang_size_major = 6,3053′)",
+          "centerRaDeg": 185.72887499732997,
+          "centerDecDeg": 15.822304516100004
+        },
+        "coverageRatio": null,
+        "matchBasis": "recorte centrado na posição preferida do objeto (SIMBAD)",
+        "curatedBy": "automatic",
+        "retrievedAt": "2026-10-08T23:20:48.362882Z"
+      },
+      {
+        "id": 213,
+        "kind": "processed_composite",
+        "hero": false,
+        "url": "/api/v1/images/files/18d5abd7f41925a5c0660611d7f2e2bf07db5ccded1c4fe4f53e81e9314cc8c0.jpg",
+        "width": 1280,
+        "height": 1349,
+        "thumbnail": {
+          "url": "/api/v1/images/files/52efea8e31ef4d44871550d15129972847b4a48090586c45e7d581980ba55179.jpg",
+          "width": 304,
+          "height": 320
+        },
+        "title": "Core of Messier 100 in super high res",
+        "provider": "ESA/Hubble",
+        "providerShort": "ESA/Hubble",
+        "source": "ESA_HUBBLE",
+        "credit": "ESA/Hubble & NASA ",
+        "acknowledgment": null,
+        "license": {
+          "code": "CC-BY-4.0",
+          "name": "Creative Commons Attribution 4.0 International",
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        "rightsText": "Creative Commons Attribution 4.0 International License",
+        "termsUrl": "https://esahubble.org/copyright/",
+        "mission": "Hubble Space Telescope",
+        "instrument": "ACS",
+        "wavelength": "Optical",
+        "pageUrl": "https://esahubble.org/images/potw1203a/",
+        "sourceImageId": "potw1203a",
+        "releaseDate": "2012-01-16",
+        "cutout": null,
+        "coverageRatio": 0.0665436989948183,
+        "matchBasis": "AVM Subject.Name 'M 100' = identificador 'M 100'; centro da imagem a 0,01′ da posição do objeto — objeto dentro do quadro (0,42′ × 0,44′); menor lado do quadro = 6,65% do tamanho angular (6,31′)",
+        "curatedBy": "automatic",
+        "retrievedAt": "2026-10-08T23:35:08.423904Z"
+      },
+      {
+        "id": 214,
+        "kind": "processed_composite",
+        "hero": false,
+        "url": "/api/v1/images/files/e5786c610e367367d43f1bc9d264e894dc9f2823d41d2cd9ddacfb3033fff05d.jpg",
+        "width": 1280,
+        "height": 1270,
+        "thumbnail": {
+          "url": "/api/v1/images/files/9d46fa2bde142e2cb63bf49446abefb2a9268daec6d48872b923261d9f2fe0dc.jpg",
+          "width": 320,
+          "height": 318
+        },
+        "title": "The Spiral Galaxy M 100",
+        "provider": "ESA/Hubble",
+        "providerShort": "ESA/Hubble",
+        "source": "ESA_HUBBLE",
+        "credit": "J. Trauger, JPL and NASA/ESA",
+        "acknowledgment": null,
+        "license": {
+          "code": "CC-BY-4.0",
+          "name": "Creative Commons Attribution 4.0 International",
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        "rightsText": "Creative Commons Attribution 4.0 International License",
+        "termsUrl": "https://esahubble.org/copyright/",
+        "mission": "Hubble Space Telescope",
+        "instrument": "WFPC2",
+        "wavelength": "Optical",
+        "pageUrl": "https://esahubble.org/images/opo9449c/",
+        "sourceImageId": "opo9449c",
+        "releaseDate": "1994-10-26",
+        "cutout": null,
+        "coverageRatio": 0.39131103385771865,
+        "matchBasis": "AVM Subject.Name 'M 100' = identificador 'M 100'; centro da imagem a 0,4′ da posição do objeto — objeto dentro do quadro (2,49′ × 2,47′); menor lado do quadro = 39,13% do tamanho angular (6,31′)",
+        "curatedBy": "automatic",
+        "retrievedAt": "2026-10-08T23:35:09.355180Z"
+      },
+      {
+        "id": 215,
+        "kind": "processed_composite",
+        "hero": false,
+        "url": "/api/v1/images/files/7094830afb49be13b9e3b0370269117197d2a33edd522b8be6c0e482e081ded0.jpg",
+        "width": 1280,
+        "height": 913,
+        "thumbnail": {
+          "url": "/api/v1/images/files/f87978785f4a93c4cec1ffb107a88d6a58199edb340c0fa09b9563900842fce7.jpg",
+          "width": 320,
+          "height": 228
+        },
+        "title": "Cepheid Variable Star in Galaxy M100",
+        "provider": "ESA/Hubble",
+        "providerShort": "ESA/Hubble",
+        "source": "ESA_HUBBLE",
+        "credit": "Dr. Wendy L. Freedman, Observatories of the Carnegie Institution of Washington, and NASA/ESA",
+        "acknowledgment": null,
+        "license": {
+          "code": "CC-BY-4.0",
+          "name": "Creative Commons Attribution 4.0 International",
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        "rightsText": "Creative Commons Attribution 4.0 International License",
+        "termsUrl": "https://esahubble.org/copyright/",
+        "mission": "Hubble Space Telescope",
+        "instrument": "WFPC2",
+        "wavelength": "Optical",
+        "pageUrl": "https://esahubble.org/images/opo9449d/",
+        "sourceImageId": "opo9449d",
+        "releaseDate": "1994-10-26",
+        "cutout": null,
+        "coverageRatio": 0.2850300238033486,
+        "matchBasis": "AVM Subject.Name 'Messier 100' = identificador 'M 100'; centro da imagem a 1,35′ da posição do objeto — objeto dentro do quadro (2,52′ × 1,8′); menor lado do quadro = 28,5% do tamanho angular (6,31′)",
+        "curatedBy": "automatic",
+        "retrievedAt": "2026-10-08T23:35:09.859390Z"
+      }
+    ],
+    "imageAbsence": null
   }
 }

@@ -6,7 +6,8 @@ import type { ObjectDetail } from '../api/types'
 import { ErrorState } from '../components/ui/ErrorState'
 import { LoadingState } from '../components/ui/LoadingState'
 import { groupProperties, indexMeasurements } from '../domain/displayGroups'
-import { ImagePlaceholder } from '../features/object/ImagePlaceholder'
+import { ImageUnavailable } from '../features/image/ImageUnavailable'
+import { ObjectImages } from '../features/image/ObjectImages'
 import objectStyles from '../features/object/Object.module.css'
 import { ObjectHeader } from '../features/object/ObjectHeader'
 import { PositionCard } from '../features/object/PositionCard'
@@ -22,7 +23,11 @@ function ObjectDetailView({ detail }: { detail: ObjectDetail }) {
       <title>{`${detail.displayName} · Galaxy Explorer`}</title>
       <div className={objectStyles.top}>
         <ObjectHeader detail={detail} />
-        <ImagePlaceholder />
+        {detail.images.length > 0 ? (
+          <ObjectImages images={detail.images} displayName={detail.displayName} />
+        ) : (
+          <ImageUnavailable absence={detail.imageAbsence} />
+        )}
       </div>
       <div className={objectStyles.cards}>
         <PositionCard position={detail.position} />

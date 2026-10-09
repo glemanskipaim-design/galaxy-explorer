@@ -10,6 +10,13 @@
 //   node scripts/capture-fixtures.mjs degraded   2a execucao do backend com
 //                                                GALAXY_SIMBAD_SESAME_URL=http://127.0.0.1:9/ e
 //                                                GALAXY_IMPORTS_QUEUE_CAPACITY=1
+//   node scripts/capture-fixtures.mjs refresh    depois do comando `images` do backend: re-GET (mesmo caminho)
+//                                                de toda fixture GET de objeto/busca/categoria, sem import
+//                                                novo, + exemplos reais dos estados de imagem (varredura)
+//   node scripts/capture-fixtures.mjs noimage    backend com o hips2fits apontando para porta sem servico
+//                                                (GALAXY_IMAGES_HIPS2FITS_BASEURLS_0/_1=http://127.0.0.1:9/hips2fits):
+//                                                importa um objeto NOVO (consulta real ao CDS) que fica sem
+//                                                imagem -> exemplo real de "Imagem não disponível"
 //   node scripts/capture-fixtures.mjs coverage   so regenera coverage.md a partir do disco
 //
 // Alvo: GALAXY_API_TARGET (default http://127.0.0.1:8081).
@@ -141,7 +148,29 @@ async function allSlugs() {
 
 /** @typedef {{id:number,value:number|null,errMinus:number|null,errPlus:number|null,limitFlag:string|null,valueText:string|null,unit:string|null,epistemic:string,derivedFrom:number[]|null,reference:unknown}} M */
 /** @typedef {{code:string,qualifier:string,available:boolean,absence:{code:string}|null,preferred:M|null,alternatives:M[]}} P */
-/** @typedef {{slug:string,category:unknown,existenceStatus:string,position:unknown,properties:P[],sources:{termsUrl:string|null,acknowledgment:string|null}[]}} D */
+/** @typedef {{kind:string,hero:boolean,acknowledgment:string|null,license:{url:string}}} I */
+/** @typedef {{slug:string,category:unknown,existenceStatus:string,position:unknown,properties:P[],sources:{termsUrl:string|null,acknowledgment:string|null}[],images?:I[],imageAbsence?:{code:string}|null}} D */
+
+/**
+ * Estados de imagem que um objeto exemplifica (chave estavel -> descricao).
+ * @param {D} d
+ * @returns {Map<string, string>}
+ */
+function imageStatesOf(d) {
+  const s = new Map()
+  const images = d.images ?? []
+  if (images.length === 0 && d.imageAbsence) s.set(`image-absent-${d.imageAbsence.code}`, `Sem imagem: ${d.imageAbsence.code}`)
+  const hero = images[0]
+  if (hero?.kind === 'processed_composite') s.set('image-processed-hero', 'Hero = imagem processada (ESA)')
+  if (hero?.kind === 'survey_cutout' && images.length === 1) s.set('image-cutout-only', 'Só recorte de survey')
+  if (hero?.kind === 'survey_cutout' && images.length > 1)
+    s.set('image-cutout-hero-with-extras', 'Hero = recorte, ESA nas extras (objeto grande)')
+  if (images.length > 1) s.set('image-extras', 'Imagens extras (mais de 1)')
+  if (images.some((i) => i.kind === 'artist_impression')) s.set('image-artist', 'Ilustração artística')
+  if (images.some((i) => i.acknowledgment !== null)) s.set('image-ack', 'Imagem com acknowledgment')
+  if (images.some((i) => !i.license.url.startsWith('https:'))) s.set('image-license-not-https', 'Licença com URL não-https (vira texto)')
+  return s
+}
 
 /**
  * Estados de UI que um objeto exemplifica (chave estavel -> descricao).
@@ -149,7 +178,7 @@ async function allSlugs() {
  * @returns {Map<string, string>}
  */
 function statesOf(d) {
-  const s = new Map()
+  const s = imageStatesOf(d)
   if (d.position === null) s.set('position-null', 'Objeto sem posição (position: null)')
   if (d.category === null) s.set('category-null', 'Objeto sem categoria (category: null)')
   if (d.existenceStatus !== 'confirmed') s.set(`existence-${d.existenceStatus}`, `existenceStatus = ${d.existenceStatus}`)
@@ -220,6 +249,15 @@ const EXPECTED_STATES = {
   'existence-not-confirmed': 'existenceStatus diferente de "confirmed"',
   'source-terms-null': 'Fonte sem termsUrl',
   'source-ack-null': 'Fonte sem acknowledgment',
+  'image-processed-hero': 'Hero = imagem processada (ESA)',
+  'image-cutout-only': 'Só recorte de survey',
+  'image-cutout-hero-with-extras': 'Hero = recorte, ESA nas extras (objeto grande)',
+  'image-extras': 'Imagens extras (mais de 1)',
+  'image-artist': 'Ilustração artística',
+  'image-ack': 'Imagem com acknowledgment',
+  'image-license-not-https': 'Licença com URL não-https (vira texto)',
+  'image-absent-NO_POSITION': 'Sem imagem: NO_POSITION',
+  'image-absent-NOT_AVAILABLE': 'Sem imagem: NOT_AVAILABLE',
 }
 
 /** Estados de fluxo (busca/import/categoria) -> fixture que os exemplifica. */
@@ -248,6 +286,15 @@ const FLOW_STATES = [
   ['Erro 5xx / INTERNAL_ERROR da API', null],
 ]
 
+/**
+ * Estados de miniatura (busca/listas) -> 1a fixture de busca/categoria que os exemplifica.
+ * @type {Array<[string, string]>}
+ */
+const THUMB_STATES = [
+  ['thumb-present', 'Item com miniatura (thumbnail não-null)'],
+  ['thumb-null', 'Item sem miniatura (thumbnail: null)'],
+]
+
 async function writeCoverage() {
   const files = (await readdir(OUT)).filter((f) => f.endsWith('.json') && f !== 'manifest.json')
   const present = new Set(files.map((f) => f.replace(/\.json$/, '')))
@@ -259,6 +306,17 @@ async function writeCoverage() {
     for (const [key] of statesOf(env.body)) {
       const k = key.startsWith('existence-') ? 'existence-not-confirmed' : key
       if (!examples.has(k)) examples.set(k, f.replace(/\.json$/, ''))
+    }
+  }
+  /** @type {Map<string, string>} */
+  const thumbs = new Map()
+  for (const f of files.filter((n) => n.startsWith('search-') || n.startsWith('category-')).sort()) {
+    const env = JSON.parse(await readFile(join(OUT, f), 'utf8'))
+    const items = env.body?.hits ?? env.body?.items ?? []
+    for (const it of items) {
+      if (!('thumbnail' in it)) continue
+      const k = it.thumbnail === null ? 'thumb-null' : 'thumb-present'
+      if (!thumbs.has(k)) thumbs.set(k, f.replace(/\.json$/, ''))
     }
   }
   const lines = [
@@ -274,6 +332,13 @@ async function writeCoverage() {
     '|---|---|',
     ...FLOW_STATES.map(([label, fx]) =>
       `| ${label} | ${fx && present.has(fx) ? '`' + fx + '`' : '**sem exemplo real**'} |`),
+    '',
+    '## Miniaturas (busca e listas)',
+    '',
+    '| Estado da UI | Fixture |',
+    '|---|---|',
+    ...THUMB_STATES.map(([key, label]) =>
+      `| ${label} | ${thumbs.has(key) ? '`' + thumbs.get(key) + '`' : '**sem exemplo real**'} |`),
     '',
     '## Página do objeto (varredura de todos os objetos do catálogo local)',
     '',
@@ -374,6 +439,64 @@ async function phaseMain() {
   }
 }
 
+/**
+ * Depois do comando `images`: o formato de objeto/busca/categoria mudou (images, imageAbsence,
+ * thumbnail). Re-GET pelo MESMO caminho de cada fixture GET existente (sem import, sem efeito
+ * colateral), mantendo a condicao original no manifesto, + exemplos reais dos estados de imagem.
+ */
+async function phaseRefresh() {
+  const P = 'refresh'
+  /** @type {{captures: Array<{name: string, condition: string}>}} */
+  const manifest = JSON.parse(await readFile(join(OUT, 'manifest.json'), 'utf8'))
+  const conditionOf = new Map(manifest.captures.map((c) => [c.name, c.condition]))
+  // search-empty-betelgeuse e "antes de importar": hoje Betelgeuse esta no catalogo; a lista vazia
+  // nao tem miniatura, entao a fixture antiga continua valida e NAO e refeita.
+  const KEEP = new Set(['search-empty-betelgeuse'])
+  const files = (await readdir(OUT)).filter((f) => f.endsWith('.json') && f !== 'manifest.json').sort()
+  for (const f of files) {
+    const name = f.replace(/\.json$/, '')
+    if (KEEP.has(name) || !/^(object|search|category|categories)/.test(name)) continue
+    const env = JSON.parse(await readFile(join(OUT, f), 'utf8'))
+    if (env.request.method !== 'GET') continue
+    const path = env.request.path.replace(/^\/api\/v1/, '')
+    await save(name, await call('GET', path), P, `${conditionOf.get(name) ?? ''}; refresh apos o comando images`)
+  }
+  const C = 'backend normal, comando images (CUTOUT,ESA_HUBBLE,ESA_WEBB) ja rodado'
+  await save('object-messier-51', await call('GET', '/objects/messier-51'), P, `${C}; exemplo pedido (M51)`)
+  await save('search-m51', await call('GET', '/search?q=M51'), P, C)
+
+  // Varredura: 1o objeto (ordem de slug) que exemplifica cada estado de imagem ainda sem exemplo.
+  const already = new Set()
+  for (const f of (await readdir(OUT)).filter((n) => n.startsWith('object-') && n.endsWith('.json'))) {
+    const env = JSON.parse(await readFile(join(OUT, f), 'utf8'))
+    if (env.status === 200) for (const [k] of imageStatesOf(env.body)) already.add(k)
+  }
+  for (const slug of await allSlugs()) {
+    const env = await call('GET', `/objects/${slug}`)
+    const fresh = [...imageStatesOf(/** @type {D} */ (env.body)).keys()].filter((k) => !already.has(k))
+    if (fresh.length === 0) continue
+    fresh.forEach((k) => already.add(k))
+    await save(`object-${slug}`, env, P, `${C}; varredura: primeiro exemplo de ${fresh.join(', ')}`)
+  }
+}
+
+/** Termo real fora do catalogo local no momento da captura: vira o exemplo de objeto sem imagem. */
+const NO_IMAGE_TERM = 'Rigel'
+
+async function phaseNoImage() {
+  const P = 'noimage'
+  const C = 'backend com GALAXY_IMAGES_HIPS2FITS_BASEURLS_0/_1=http://127.0.0.1:9/hips2fits (recorte sob '
+    + 'demanda falha; SIMBAD/Sesame normais)'
+  const before = await call('GET', '/search?q=' + encodeURIComponent(NO_IMAGE_TERM))
+  if (/** @type {{hits: {matchType: string}[]}} */ (before.body).hits.some((h) => h.matchType === 'EXACT')) {
+    throw new Error(`${NO_IMAGE_TERM} ja esta no catalogo; escolha outro termo novo`)
+  }
+  const done = await importAndPoll('import-rigel', NO_IMAGE_TERM, P, `${C}; termo fora do catalogo`)
+  const slug = /** @type {{resultSlugs: string[]}} */ (done.body).resultSlugs[0]
+  if (!slug) throw new Error(`import de ${NO_IMAGE_TERM} sem slug`)
+  await save(`object-${slug}`, await call('GET', `/objects/${slug}`), P, `${C}; apos import de ${NO_IMAGE_TERM}`)
+}
+
 async function phaseDegraded() {
   const P = 'degraded'
   const C = '2a execucao do backend: GALAXY_SIMBAD_SESAME_URL=http://127.0.0.1:9/ (porta sem servico), '
@@ -392,8 +515,10 @@ console.log(`API: ${API}  fase: ${phase}`)
 if (phase === 'main') await phaseMain()
 else if (phase === 'basic') await phaseBasic()
 else if (phase === 'degraded') await phaseDegraded()
+else if (phase === 'refresh') await phaseRefresh()
+else if (phase === 'noimage') await phaseNoImage()
 else if (phase !== 'coverage') {
-  console.error('uso: node scripts/capture-fixtures.mjs <main|basic|degraded|coverage>')
+  console.error('uso: node scripts/capture-fixtures.mjs <main|basic|degraded|refresh|noimage|coverage>')
   process.exit(2)
 }
 if (captured.length > 0) await mergeManifest()

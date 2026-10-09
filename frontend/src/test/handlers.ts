@@ -12,6 +12,7 @@ import {
   searchEmpty,
   searchFuzzy,
   searchM31,
+  searchM51,
 } from './fixtures'
 
 /** Prefixo do MSW: o fetch relativo do jsdom resolve contra http://localhost:3000 (vitest). */
@@ -42,7 +43,7 @@ export function sequence<T>(fixtures: Fixture<T>[]): () => Response {
 
 /** q da requisicao CAPTURADA -> fixture (vale tambem para o 400, cujo corpo nao traz a query). */
 const searchByQuery = new Map<string, Fixture<unknown>>(
-  [searchM31, searchFuzzy, searchEmpty, search400].map((f) => [
+  [searchM31, searchM51, searchFuzzy, searchEmpty, search400].map((f) => [
     new URL(f.request.path, 'http://x').searchParams.get('q') ?? '',
     f,
   ]),

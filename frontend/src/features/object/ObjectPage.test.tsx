@@ -57,7 +57,7 @@ describe('ExternalLink', () => {
 })
 
 describe('ObjectPage com a fixture real de M31', () => {
-  it('cabecalho, classificacao, cartoes por grupo, link ADS, creditos e imagem ausente', async () => {
+  it('cabecalho, classificacao, cartoes por grupo, link ADS, creditos e imagem real (nao o aviso de ausencia)', async () => {
     renderApp('/objects/messier-31')
     const detail = objectM31.body
 
@@ -90,7 +90,8 @@ describe('ObjectPage com a fixture real de M31', () => {
     const ack = detail.sources[0]?.acknowledgment ?? ''
     expect(within(sources).getByText((_, el) => el?.tagName === 'BLOCKQUOTE' && el.textContent === ack)).toBeInTheDocument()
 
-    expect(screen.getByText('Imagem não disponível')).toBeInTheDocument()
+    expect(detail.images.length).toBeGreaterThan(0)
+    expect(screen.queryByText('Imagem não disponível')).toBeNull()
   })
 
   it('distancia de M31: 12 alternativas publicadas e selo de divergencia', async () => {

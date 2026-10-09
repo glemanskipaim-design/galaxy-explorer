@@ -10,7 +10,7 @@
     "location": null,
     "retry-after": null
   },
-  "capturedAt": "2026-10-07T00:17:52.870Z",
+  "capturedAt": "2026-10-08T23:41:35.194Z",
   "body": {
     "slug": "messier-31",
     "displayName": "M 31",
@@ -982,12 +982,184 @@
     ],
     "sources": [
       {
+        "code": "CDS_HIPS2FITS",
+        "name": "CDS hips2fits",
+        "homepageUrl": "https://alasky.cds.unistra.fr/hips-image-services/hips2fits",
+        "termsUrl": "https://cds.unistra.fr/legals/",
+        "acknowledgment": "This research made use of hips2fits, a service provided by CDS."
+      },
+      {
+        "code": "ESA_HUBBLE",
+        "name": "ESA/Hubble",
+        "homepageUrl": "https://esahubble.org/",
+        "termsUrl": "https://esahubble.org/copyright/",
+        "acknowledgment": null
+      },
+      {
         "code": "SIMBAD",
         "name": "SIMBAD Astronomical Database (CDS, Strasbourg)",
         "homepageUrl": "https://simbad.cds.unistra.fr/simbad/",
         "termsUrl": "https://cds.unistra.fr/legals/",
         "acknowledgment": "This research has made use of the SIMBAD database, operated at CDS, Strasbourg, France\n2000,A&AS,143,9, \"The SIMBAD astronomical database\", Wenger et al."
       }
-    ]
+    ],
+    "images": [
+      {
+        "id": 1,
+        "kind": "survey_cutout",
+        "hero": true,
+        "url": "/api/v1/images/files/61c836cbf2c8608498a03ae34bac8b0de8632928f57fd1614d31c8b4c902251b.jpg",
+        "width": 800,
+        "height": 600,
+        "thumbnail": {
+          "url": "/api/v1/images/files/23d443c5c1f172995381056b120d34cc7a423920d52991c90c9279ccb70c4281.jpg",
+          "width": 320,
+          "height": 240
+        },
+        "title": "DSS colored",
+        "provider": "CDS hips2fits (DSS colored)",
+        "providerShort": "DSS2 via CDS",
+        "source": "CDS_HIPS2FITS",
+        "credit": "Digitized Sky Survey - STScI/NASA, Colored & Healpixed by CDS",
+        "acknowledgment": "This research made use of hips2fits, a service provided by CDS.",
+        "license": {
+          "code": "ODbL-1.0",
+          "name": "Open Data Commons Open Database License (ODbL) v1.0",
+          "url": "https://opendatacommons.org/licenses/odbl/1-0/"
+        },
+        "rightsText": "HiPS © CNRS/Unistra — ODbL-1.0",
+        "termsUrl": "http://archive.stsci.edu/dss/copyright.html",
+        "mission": "DSS colored",
+        "instrument": null,
+        "wavelength": null,
+        "pageUrl": "https://alasky.cds.unistra.fr/hips-image-services/hips2fits?hips=CDS%2FP%2FDSS2%2Fcolor&ra=10.684708&dec=41.26875&fov=4.156875&width=800&height=600&projection=TAN&format=jpg",
+        "sourceImageId": "CDS/P/DSS2/color",
+        "releaseDate": null,
+        "cutout": {
+          "survey": "DSS colored",
+          "hipsId": "CDS/P/DSS2/color",
+          "fovDeg": 4.156874999999999,
+          "fovBasis": "1,25 × tamanho angular (SIMBAD ang_size_major = 199,53′)",
+          "centerRaDeg": 10.684708333333333,
+          "centerDecDeg": 41.268750000000004
+        },
+        "coverageRatio": null,
+        "matchBasis": "recorte centrado na posição preferida do objeto (SIMBAD)",
+        "curatedBy": "automatic",
+        "retrievedAt": "2026-10-08T22:45:38.498866Z"
+      },
+      {
+        "id": 4,
+        "kind": "processed_composite",
+        "hero": false,
+        "url": "/api/v1/images/files/8b501c90c67f2441208cb56e65f341aaf1655b693d5b658e6cf682dcf5ee8135.jpg",
+        "width": 1280,
+        "height": 299,
+        "thumbnail": {
+          "url": "/api/v1/images/files/97b767824f4d296653607f817b3979a49b2eb6507e80680f9122213f70c6ef67.jpg",
+          "width": 320,
+          "height": 75
+        },
+        "title": "Hubble’s panoramic view of the Andromeda Galaxy",
+        "provider": "ESA/Hubble",
+        "providerShort": "ESA/Hubble",
+        "source": "ESA_HUBBLE",
+        "credit": "NASA, ESA, B. Williams (University of Washington)",
+        "acknowledgment": null,
+        "license": {
+          "code": "CC-BY-4.0",
+          "name": "Creative Commons Attribution 4.0 International",
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        "rightsText": "Creative Commons Attribution 4.0 International License",
+        "termsUrl": "https://esahubble.org/copyright/",
+        "mission": "Hubble Space Telescope",
+        "instrument": "WFC3",
+        "wavelength": "Optical",
+        "pageUrl": "https://esahubble.org/images/heic2501a/",
+        "sourceImageId": "heic2501a",
+        "releaseDate": "2025-01-16",
+        "cutout": null,
+        "coverageRatio": 0.16477664481612994,
+        "matchBasis": "AVM Subject.Name 'Andromeda Galaxy' = identificador 'NAME Andromeda Galaxy'; centro da imagem a 13,19′ da posição do objeto — objeto dentro do quadro (140,6′ × 32,88′); menor lado do quadro = 16,48% do tamanho angular (199,53′)",
+        "curatedBy": "automatic",
+        "retrievedAt": "2026-10-08T22:45:55.451005Z"
+      },
+      {
+        "id": 5,
+        "kind": "processed_composite",
+        "hero": false,
+        "url": "/api/v1/images/files/3c3a09d49a2e2674d5b0dd481943a876981380e615721a85da567b5e65263505.jpg",
+        "width": 1280,
+        "height": 409,
+        "thumbnail": {
+          "url": "/api/v1/images/files/37fcfbde622acd8fdb2d720e791d57863f72b343dc86a1665651281179a51458.jpg",
+          "width": 320,
+          "height": 102
+        },
+        "title": "Sharpest ever view of the Andromeda Galaxy",
+        "provider": "ESA/Hubble",
+        "providerShort": "ESA/Hubble",
+        "source": "ESA_HUBBLE",
+        "credit": "NASA, ESA, J. Dalcanton (University of Washington, USA), B. F. Williams (University of Washington, USA), L. C. Johnson (University of Washington, USA), the PHAT team, and R. Gendler.",
+        "acknowledgment": null,
+        "license": {
+          "code": "CC-BY-4.0",
+          "name": "Creative Commons Attribution 4.0 International",
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        "rightsText": "Creative Commons Attribution 4.0 International License",
+        "termsUrl": "https://esahubble.org/copyright/",
+        "mission": "Hubble Space Telescope",
+        "instrument": "ACS",
+        "wavelength": "Optical, Infrared",
+        "pageUrl": "https://esahubble.org/images/heic1502a/",
+        "sourceImageId": "heic1502a",
+        "releaseDate": "2015-01-05",
+        "cutout": null,
+        "coverageRatio": 0.09290352751049526,
+        "matchBasis": "AVM Subject.Name 'Andromeda Galaxy' = identificador 'NAME Andromeda Galaxy'; centro da imagem a 28,7′ da posição do objeto — objeto dentro do quadro (57,98′ × 18,54′); menor lado do quadro = 9,29% do tamanho angular (199,53′)",
+        "curatedBy": "automatic",
+        "retrievedAt": "2026-10-08T22:45:56.407644Z"
+      },
+      {
+        "id": 6,
+        "kind": "processed_composite",
+        "hero": false,
+        "url": "/api/v1/images/files/288dfa1fb954b8c903f796b4eb2f40b6b639672036bebe211d2c964dd737d1b9.jpg",
+        "width": 1280,
+        "height": 960,
+        "thumbnail": {
+          "url": "/api/v1/images/files/e60e7c8ba3eed0e48a1f9c7033e5d2ac42179d9e2fb18fcbda29e101ad4e50cd.jpg",
+          "width": 320,
+          "height": 240
+        },
+        "title": "HST PHAT detail of M31",
+        "provider": "ESA/Hubble",
+        "providerShort": "ESA/Hubble",
+        "source": "ESA_HUBBLE",
+        "credit": "NASA, ESA, and B. Williams and J. Dalcanton (University of Washington, Seattle)",
+        "acknowledgment": null,
+        "license": {
+          "code": "CC-BY-4.0",
+          "name": "Creative Commons Attribution 4.0 International",
+          "url": "https://creativecommons.org/licenses/by/4.0/"
+        },
+        "rightsText": "Creative Commons Attribution 4.0 International License",
+        "termsUrl": "https://esahubble.org/copyright/",
+        "mission": "Hubble Space Telescope",
+        "instrument": "WFC3, ACS",
+        "wavelength": "Ultraviolet, Optical, Infrared",
+        "pageUrl": "https://esahubble.org/images/opo1203d/",
+        "sourceImageId": "opo1203d",
+        "releaseDate": "2012-01-11",
+        "cutout": null,
+        "coverageRatio": 0.0037504538408389717,
+        "matchBasis": "AVM Subject.Name 'Andromeda Galaxy' = identificador 'NAME Andromeda Galaxy'; centro da imagem a 0,5′ da posição do objeto — objeto dentro do quadro (1′ × 0,75′); menor lado do quadro = 0,38% do tamanho angular (199,53′)",
+        "curatedBy": "automatic",
+        "retrievedAt": "2026-10-08T22:45:57.612655Z"
+      }
+    ],
+    "imageAbsence": null
   }
 }

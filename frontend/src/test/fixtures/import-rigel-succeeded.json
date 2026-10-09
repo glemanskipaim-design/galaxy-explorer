@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/imports/9",
+    "body": null
+  },
+  "status": 200,
+  "headers": {
+    "content-type": "application/json",
+    "location": null,
+    "retry-after": null
+  },
+  "capturedAt": "2026-10-09T00:16:27.431Z",
+  "body": {
+    "id": 9,
+    "query": "Rigel",
+    "status": "succeeded",
+    "message": null,
+    "resultSlugs": [
+      "rigel"
+    ],
+    "runId": 20,
+    "createdAt": "2026-10-09T00:16:18.534574Z",
+    "startedAt": "2026-10-09T00:16:18.555239Z",
+    "finishedAt": "2026-10-09T00:16:27.254646Z"
+  }
+}

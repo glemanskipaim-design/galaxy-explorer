@@ -1,5 +1,6 @@
 import { Link } from 'react-router'
 import type { SearchHit } from '../../api/types'
+import { ResultThumbnail } from '../image/ResultThumbnail'
 import styles from './Search.module.css'
 
 export function SearchResultItem({ hit }: { hit: SearchHit }) {
@@ -19,6 +20,9 @@ export function SearchResultItem({ hit }: { hit: SearchHit }) {
               aproximado
             </span>
           )}
+        </span>
+        <span className={styles.hitThumb}>
+          <ResultThumbnail thumbnail={hit.thumbnail} />
         </span>
         <span className={styles.hitArrow} aria-hidden="true">
           →

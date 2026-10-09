@@ -10,7 +10,7 @@
     "location": null,
     "retry-after": null
   },
-  "capturedAt": "2026-10-07T00:17:48.830Z",
+  "capturedAt": "2026-10-08T23:41:35.343Z",
   "body": {
     "query": "Betelgeuze",
     "normalizedQuery": "betelgeuze",
@@ -22,7 +22,15 @@
         "categoryName": "Estrela supergigante",
         "matchedIdentifier": "NAME Betelgeuse",
         "matchType": "FUZZY",
-        "score": 0.5714286
+        "score": 0.5714286,
+        "thumbnail": {
+          "url": "/api/v1/images/files/e45aac8722b7d1b638187e07104ca126b76b82a48dcc510527f6c499ea55c0bb.jpg",
+          "width": 320,
+          "height": 240,
+          "kind": "survey_cutout",
+          "provider": "PanSTARRS via CDS",
+          "licenseCode": "ODbL-1.0"
+        }
       }
     ]
   }

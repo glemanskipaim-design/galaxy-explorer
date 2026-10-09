@@ -31,6 +31,13 @@ seção 7.4 / risco R3): só a função pura é testada, quando há valor real c
 | Import failed "interrompido por reinício do servidor" | **sem exemplo real** |
 | Erro 5xx / INTERNAL_ERROR da API | **sem exemplo real** |
 
+## Miniaturas (busca e listas)
+
+| Estado da UI | Fixture |
+|---|---|
+| Item com miniatura (thumbnail não-null) | `category-galaxy-p1` |
+| Item sem miniatura (thumbnail: null) | **sem exemplo real** |
+
 ## Página do objeto (varredura de todos os objetos do catálogo local)
 
 | Estado da UI | Fixture |
@@ -66,4 +73,13 @@ seção 7.4 / risco R3): só a função pura é testada, quando há valor real c
 | Objeto sem categoria (category: null) | **sem exemplo real** |
 | existenceStatus diferente de "confirmed" | **sem exemplo real** |
 | Fonte sem termsUrl | **sem exemplo real** |
-| Fonte sem acknowledgment | **sem exemplo real** |
+| Fonte sem acknowledgment | `object-messier-100` |
+| Hero = imagem processada (ESA) | `object-messier-51` |
+| Só recorte de survey | `object-betelgeuse` |
+| Hero = recorte, ESA nas extras (objeto grande) | `object-messier-100` |
+| Imagens extras (mais de 1) | `object-messier-100` |
+| Ilustração artística | **sem exemplo real** |
+| Imagem com acknowledgment | `object-betelgeuse` |
+| Licença com URL não-https (vira texto) | **sem exemplo real** |
+| Sem imagem: NO_POSITION | **sem exemplo real** |
+| Sem imagem: NOT_AVAILABLE | `object-rigel` |
