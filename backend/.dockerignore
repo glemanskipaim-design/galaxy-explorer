@@ -1,0 +1,11 @@
+# Denylist: fica fora do contexto de build o que nao deve (ou nao precisa) ir para
+# o Docker — artefatos locais, imagens baixadas, segredos. O Dockerfile, de todo
+# modo, so copia pom.xml, src/ e docker/.
+target/
+data/
+.env
+.env.*
+.mvn/wrapper/maven-wrapper.jar
+*.log
+.idea/
+*.iml

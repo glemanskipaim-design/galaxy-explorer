@@ -2,9 +2,13 @@ package dev.galaxyexplorer.ingestion.pipeline;
 
 import java.time.Clock;
 import java.time.OffsetDateTime;
+import java.util.Locale;
+import java.util.Optional;
 
 import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.stereotype.Repository;
+
+import dev.galaxyexplorer.catalog.SourceCode;
 
 /**
  * Acesso a {@code ingestion_run}. Chamado fora de transacao (autocommit): o
@@ -61,5 +65,22 @@ public class IngestionRunRepository {
                 .param("now", OffsetDateTime.now(clock))
                 .param("reason", reason)
                 .update();
+    }
+
+    /** Status do run mais recente da fonte com esse gatilho; vazio se nunca rodou. */
+    public Optional<RunStatus> latestStatus(SourceCode source, RunTrigger trigger) {
+        return jdbc.sql("""
+                SELECT r.status
+                FROM ingestion_run r
+                JOIN source s ON s.id = r.source_id
+                WHERE s.code = :code AND r.trigger = :trigger
+                ORDER BY r.started_at DESC, r.id DESC
+                LIMIT 1
+                """)
+                .param("code", source.name())
+                .param("trigger", trigger.dbValue())
+                .query(String.class)
+                .optional()
+                .map(v -> RunStatus.valueOf(v.toUpperCase(Locale.ROOT)));
     }
 }

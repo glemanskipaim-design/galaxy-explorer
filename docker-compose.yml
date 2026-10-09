@@ -1,13 +1,21 @@
-# Galaxy Explorer — ambiente de desenvolvimento.
+# Galaxy Explorer — beta empacotada + ambiente de desenvolvimento.
 #
-# Porta do host padrao 5433 (nao 5432): nesta maquina a 5432 ja e usada por um
-# PostgreSQL instalado como servico do Windows. Publicada so em loopback para o
-# banco de desenvolvimento nao ficar exposto na rede local.
-# Para mudar, defina POSTGRES_PORT no .env (e GALAXY_DB_PORT para o backend).
+#   docker compose up -d --build     -> beta completa: http://127.0.0.1:8088
+#   docker compose up -d postgres    -> so o banco (modo desenvolvimento: backend em
+#                                       8081 via mvnw + npm run dev, como antes)
+#
+# Exposicao no host, de proposito minima:
+#   - frontend (nginx): so 127.0.0.1:${GALAXY_HTTP_PORT:-8088}
+#   - postgres:         so 127.0.0.1:${POSTGRES_PORT:-5433} (5432 desta maquina e de um
+#                       PostgreSQL de servico do Windows)
+#   - backend:          NENHUMA porta publicada; a API (sem autenticacao) so e alcancada
+#                       pelo nginx, na rede interna do compose.
+# Variaveis: copie .env.example para .env (opcional; sem .env valem os defaults).
 
 services:
   postgres:
-    image: postgres:17
+    # Tag completa (yagyu). So trocar dentro da major 17: o volume galaxy-pgdata e da 17.
+    image: postgres:17.11
     environment:
       POSTGRES_DB: galaxy
       POSTGRES_USER: galaxy
@@ -25,19 +33,60 @@ services:
       retries: 10
       start_period: 10s
 
-  # Bloco futuro: backend containerizado.
-  # backend:
-  #   build: ./backend
-  #   depends_on:
-  #     postgres:
-  #       condition: service_healthy
-  #   environment:
-  #     GALAXY_DB_HOST: postgres
-  #     GALAXY_DB_PORT: 5432
+  backend:
+    build: ./backend
+    image: galaxy-explorer-backend:0.1.0-beta
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment: &backend-env
+      GALAXY_DB_HOST: postgres
+      GALAXY_DB_PORT: "5432"
+      GALAXY_DB_PASSWORD: ${POSTGRES_PASSWORD:-galaxy_dev}
+      # So dentro do container; a porta nao e publicada no host.
+      GALAXY_BIND_ADDRESS: 0.0.0.0
+    volumes:
+      # Volume nomeado por padrao. GALAXY_IMAGES_DIR=./backend/data/images (no .env)
+      # compartilha os arquivos com o modo dev — necessario se o banco ja foi populado
+      # pelo backend local (ver README, "Beta e desenvolvimento no mesmo banco").
+      - &images-volume ${GALAXY_IMAGES_DIR:-galaxy-images}:/app/data/images
+    # sem "ports:" de proposito (ver cabecalho)
 
-  # Bloco futuro: frontend (React + Vite).
-  # frontend:
-  #   build: ./frontend
+  # Carga inicial, uma vez: 110 Messier do SIMBAD + imagens (hips2fits, ESA/Hubble,
+  # ESA/Webb). Precisa de internet. Idempotente e retomavel, com o estado lido do banco
+  # (nao de arquivo) — ver backend/docker/seed.sh.
+  # Espera o backend ficar saudavel (Flyway ja migrou) e sai; o app funciona durante a
+  # carga e os objetos vao aparecendo. Reexecutar: docker compose run --rm seed
+  seed:
+    # mesma imagem do backend (o build repetido sai todo do cache)
+    build: ./backend
+    image: galaxy-explorer-backend:0.1.0-beta
+    entrypoint: ["/app/seed.sh"]
+    restart: "no"
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      <<: *backend-env
+      # so para teste rapido/forcar passada — ver backend/docker/seed.sh
+      GALAXY_SEED_QUERIES: ${GALAXY_SEED_QUERIES:-}
+      GALAXY_SEED_FORCE: ${GALAXY_SEED_FORCE:-0}
+    volumes:
+      - *images-volume
+    healthcheck:
+      disable: true
+
+  frontend:
+    build: ./frontend
+    image: galaxy-explorer-frontend:0.1.0-beta
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${GALAXY_HTTP_PORT:-8088}:80"
 
 volumes:
   galaxy-pgdata:
+  galaxy-images:
